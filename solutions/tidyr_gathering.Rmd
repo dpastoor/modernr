@@ -1,0 +1,94 @@
+# Tidyr 
+
+
+```{r}
+library(PKPDmisc)
+library(knitr)
+library(lazyeval)
+library(tidyverse)
+
+```
+
+```{r}
+eta_cov <- read.csv("../data/ebe_cov.csv")
+
+```
+
+
+```{r}
+kable(head(eta_cov))
+```
+
+
+```{r}
+
+g_eta_cov <- eta_cov %>% 
+    gather(cov_name, cov_value, BW:CRCL)
+
+```
+
+```{r}
+kable(head(g_eta_cov))
+```
+
+
+lazily evaluated function for ggplot plots
+
+```{r}
+eta_cov_scatter <- function(df, xval = "cov_value", yval, cov_name = "cov_name") {
+  lazy_plot <- lazyeval::interp(~ggplot(df, aes(x = cov_value, y = ETA1)) +
+    geom_point() + facet_wrap(~cov_name, scales="free"),
+    cov_value = as.name(xval),
+    ETA1 = as.name(yval),
+    cov_name = as.name(cov_name))
+  return(lazyeval::lazy_eval(lazy_plot))
+}
+```
+
+### Single plot example
+
+```{r}
+eta_cov_scatter(g_eta_cov, yval = "ETA1")
+
+```
+
+### Iterate through multiple ETA values
+
+```{r}
+lapply(paste0("ETA", 1:4), function(eta, g_eta_cov) {
+  eta_cov_scatter(g_eta_cov, yval = eta)
+}, g_eta_cov)
+
+```
+
+## Double stack
+
+We can actually gather again
+```{r}
+
+g2_eta_cov <- g_eta_cov %>% gather(eta_name, eta_value, ETA1:ETA9 )
+
+kable(head(g2_eta_cov))
+kable(tail(g2_eta_cov))
+
+```
+
+Then we can split up the plots
+```{r}
+split_eta_cov <- g2_eta_cov %>% split(.$cov_name)
+```
+
+### plot all releationships
+
+```{r}
+lapply(split_eta_cov, function(x) {
+   cov_name <- unique(x$cov_name)
+  ggplot(x, aes(x = cov_value, y = eta_value)) +
+    geom_point() + facet_wrap(~eta_name, scales = "free") +
+    geom_smooth(se = F) +
+    ggtitle(cov_name) +
+    xlab(cov_name) 
+}) 
+
+```
+
