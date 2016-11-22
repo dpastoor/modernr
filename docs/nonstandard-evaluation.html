@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Modern R Solutions</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="solutions to the modern R exercises">
+  <meta name="generator" content="bookdown 0.2 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Modern R Solutions" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="solutions to the modern R exercises" />
+  <meta name="github-repo" content="dpastoor/modernr" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Modern R Solutions" />
+  <meta name="twitter:site" content="@devinpastoor" />
+  <meta name="twitter:description" content="solutions to the modern R exercises" />
+  
+
+<meta name="author" content="Devin Pastoor">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="tidyr.html">
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="modernr.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><strong><a href="./"> Modern R Solutions </a></strong></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html"><i class="fa fa-check"></i><b>1</b> dplyr data manipulation</a><ul>
+<li class="chapter" data-level="1.0.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#task-i"><i class="fa fa-check"></i><b>1.0.1</b> Task-I</a></li>
+<li class="chapter" data-level="1.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#data-manipulation"><i class="fa fa-check"></i><b>1.1</b> DATA MANIPULATION</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#task-ii"><i class="fa fa-check"></i><b>1.1.1</b> Task-II</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#descriptive-statistics"><i class="fa fa-check"></i><b>1.2</b> Descriptive Statistics</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#task-iii"><i class="fa fa-check"></i><b>1.2.1</b> Task III</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html"><i class="fa fa-check"></i><b>2</b> Introduction to ggplot2</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#xy-plots"><i class="fa fa-check"></i><b>2.1</b> XY Plots</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#boxplots-and-histograms"><i class="fa fa-check"></i><b>2.2</b> Boxplots and Histograms</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="diagnostic-plots.html"><a href="diagnostic-plots.html"><i class="fa fa-check"></i><b>3</b> Diagnostic Plots</a></li>
+<li class="chapter" data-level="4" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html"><i class="fa fa-check"></i><b>4</b> advanced ggplot customizations</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#to-get-a-final-plot-that-looks-like-this"><i class="fa fa-check"></i><b>4.0.1</b> to get a final plot that looks like this:</a></li>
+<li class="chapter" data-level="4.0.2" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-will-look-like-this"><i class="fa fa-check"></i><b>4.0.2</b> so it will look like this:</a></li>
+<li class="chapter" data-level="4.0.3" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this"><i class="fa fa-check"></i><b>4.0.3</b> so it looks like this:</a></li>
+<li class="chapter" data-level="4.0.4" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this-1"><i class="fa fa-check"></i><b>4.0.4</b> So it looks like this:</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tidyr.html"><a href="tidyr.html"><i class="fa fa-check"></i><b>5</b> Tidyr</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="tidyr.html"><a href="tidyr.html#single-plot-example"><i class="fa fa-check"></i><b>5.0.1</b> Single plot example</a></li>
+<li class="chapter" data-level="5.0.2" data-path="tidyr.html"><a href="tidyr.html#iterate-through-multiple-eta-values"><i class="fa fa-check"></i><b>5.0.2</b> Iterate through multiple ETA values</a></li>
+<li class="chapter" data-level="5.1" data-path="tidyr.html"><a href="tidyr.html#double-stack"><i class="fa fa-check"></i><b>5.1</b> Double stack</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="tidyr.html"><a href="tidyr.html#plot-all-releationships"><i class="fa fa-check"></i><b>5.1.1</b> plot all releationships</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="nonstandard-evaluation.html"><a href="nonstandard-evaluation.html"><i class="fa fa-check"></i><b>6</b> Nonstandard evaluation</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modern R Solutions</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="nonstandard-evaluation" class="section level1">
+<h1><span class="header-section-number">6</span> Nonstandard evaluation</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lazyeval)
+<span class="kw">library</span>(PKPDdatasets)
+<span class="kw">library</span>(PKPDmisc)
+<span class="kw">library</span>(tidyverse)
+<span class="co">#&gt; Loading tidyverse: ggplot2</span>
+<span class="co">#&gt; Loading tidyverse: tibble</span>
+<span class="co">#&gt; Loading tidyverse: tidyr</span>
+<span class="co">#&gt; Loading tidyverse: readr</span>
+<span class="co">#&gt; Loading tidyverse: purrr</span>
+<span class="co">#&gt; Loading tidyverse: dplyr</span>
+<span class="co">#&gt; Conflicts with tidy packages ----------------------------------------------</span>
+<span class="co">#&gt; filter():     dplyr, stats</span>
+<span class="co">#&gt; is_formula(): purrr, lazyeval</span>
+<span class="co">#&gt; lag():        dplyr, stats</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">eta_cov &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;../data/EtaCov_base.csv&quot;</span>)
+<span class="co">#&gt; Parsed with column specification:</span>
+<span class="co">#&gt; cols(</span>
+<span class="co">#&gt;   Scenario = col_character(),</span>
+<span class="co">#&gt;   ID = col_integer(),</span>
+<span class="co">#&gt;   WT = col_integer(),</span>
+<span class="co">#&gt;   AGE = col_integer(),</span>
+<span class="co">#&gt;   nV = col_double(),</span>
+<span class="co">#&gt;   nCl = col_double(),</span>
+<span class="co">#&gt;   nKa = col_double()</span>
+<span class="co">#&gt; )</span></code></pre></div>
+<ul>
+<li>lazyeval::interp()</li>
+<li>lazyeval::lazy_eval()</li>
+</ul>
+<p>This doesn’t work, as inside aes, ggplot literally evaluates the column names, so will look for the column called xtemplate, instead of Time</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> &quot;Time&quot;</span>
+y &lt;-<span class="st"> &quot;Conc&quot;</span>
+<span class="kw">ggplot</span>(df, 
+       <span class="kw">aes</span>(<span class="dt">x=</span>xtemplate, 
+           <span class="dt">y=</span>ytemplate, 
+           <span class="dt">group =</span> group_template)) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_line</span>() +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">conc_time &lt;-<span class="st"> </span>function(df, xcol, ycol, group_var) {
+  p &lt;-<span class="st"> </span>lazyeval::<span class="kw">interp</span>(~<span class="kw">ggplot</span>(df, 
+       <span class="kw">aes</span>(<span class="dt">x=</span>xtemplate, 
+           <span class="dt">y=</span>ytemplate, 
+           <span class="dt">group =</span> group_template)) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_line</span>() +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">theme_bw</span>() +<span class="st"> </span><span class="kw">base_theme</span>(),
+                        <span class="dt">xtemplate =</span> <span class="kw">as.name</span>(xcol),
+                        <span class="dt">ytemplate =</span> <span class="kw">as.name</span>(ycol),
+                        <span class="dt">group_template =</span> <span class="kw">as.name</span>(group_var))
+    
+  <span class="kw">return</span>(lazyeval::<span class="kw">lazy_eval</span>(p))
+}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">capitalize_names</span>(Theoph) %&gt;%
+<span class="st">  </span><span class="kw">conc_time</span>(<span class="st">&quot;TIME&quot;</span>, <span class="st">&quot;CONC&quot;</span>, <span class="st">&quot;SUBJECT&quot;</span>)</code></pre></div>
+<p><img src="NSE_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+
+<span class="kw">capitalize_names</span>(sd_oral_richpk) %&gt;%
+<span class="st">  </span><span class="kw">conc_time</span>(<span class="st">&quot;TIME&quot;</span>, <span class="st">&quot;CONC&quot;</span>, <span class="st">&quot;ID&quot;</span>) +
+<span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">20</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>)</code></pre></div>
+<p><img src="NSE_files/figure-html/unnamed-chunk-6-2.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">eta_vs_cov &lt;-<span class="st"> </span>function(df, xcol, ycol, group_var, facet_var) {
+  p &lt;-<span class="st"> </span>lazyeval::<span class="kw">interp</span>(~<span class="kw">ggplot</span>(df, 
+       <span class="kw">aes</span>(<span class="dt">x=</span>xtemplate, 
+           <span class="dt">y=</span>ytemplate, 
+           <span class="dt">group =</span> group_template))  +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">facet_wrap</span>(~facet_template) +<span class="st"> </span><span class="kw">stat_smooth</span>(<span class="dt">se =</span> F) +
+<span class="st">    </span><span class="kw">theme_bw</span>() +<span class="st"> </span><span class="kw">base_theme</span>(),
+                        <span class="dt">xtemplate =</span> <span class="kw">as.name</span>(xcol),
+                        <span class="dt">ytemplate =</span> <span class="kw">as.name</span>(ycol),
+                        <span class="dt">group_template =</span> <span class="kw">as.name</span>(group_var),
+                        <span class="dt">facet_template =</span> <span class="kw">as.name</span>(facet_var))
+    
+  <span class="kw">return</span>(lazyeval::<span class="kw">lazy_eval</span>(p))
+}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g_eta_cov &lt;-<span class="st"> </span>eta_cov %&gt;%<span class="st"> </span><span class="kw">gather</span>(etaname, etaval, nV:nKa)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g2_eta_cov &lt;-<span class="st"> </span>g_eta_cov %&gt;%<span class="st"> </span><span class="kw">gather</span>(covname, covval, AGE, WT)
+
+eta_cov_list &lt;-<span class="st"> </span>g2_eta_cov %&gt;%<span class="st"> </span><span class="kw">split</span>(.$covname)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">eta_cov_list %&gt;%<span class="st"> </span><span class="kw">lapply</span>(eta_vs_cov, <span class="st">&quot;covval&quot;</span>, <span class="st">&quot;etaval&quot;</span>, <span class="dt">group =</span> <span class="st">&quot;etaval&quot;</span>, <span class="st">&quot;etaname&quot;</span>)
+<span class="co">#&gt; $AGE</span>
+<span class="co">#&gt; `geom_smooth()` using method = &#39;loess&#39;</span></code></pre></div>
+<p><img src="NSE_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre><code>#&gt; 
+#&gt; $WT
+#&gt; `geom_smooth()` using method = &#39;loess&#39;</code></pre>
+<p><img src="NSE_files/figure-html/unnamed-chunk-10-2.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cov_df &lt;-<span class="st"> </span>eta_cov %&gt;%<span class="st"> </span><span class="kw">select</span>(WT:AGE)
+plot_list &lt;-<span class="st"> </span><span class="kw">list</span>()
+for (name in <span class="kw">names</span>(cov_df)) {
+   plot_list[[name]] &lt;-<span class="st"> </span>g_eta_cov %&gt;%<span class="st"> </span>
+<span class="st">    </span><span class="kw">eta_vs_cov</span>(name, 
+               <span class="st">&quot;etaval&quot;</span>, 
+               <span class="dt">group =</span> <span class="st">&quot;etaname&quot;</span>, 
+               <span class="dt">facet_var =</span> <span class="st">&quot;etaname&quot;</span>)
+}
+
+
+plot_list[[<span class="st">&quot;WT&quot;</span>]] +<span class="st"> </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="dv">80</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">size =</span> <span class="fl">1.5</span>)
+<span class="co">#&gt; `geom_smooth()` using method = &#39;loess&#39;</span></code></pre></div>
+<p><img src="NSE_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+<span class="kw">lapply</span>(plot_list, function(x) {
+    <span class="co"># be aware that hard coded intercepts can run into issues with multiple plots</span>
+    <span class="co">#instead should use a list or named vector to setup the xintercept by cov name</span>
+  p &lt;-<span class="st"> </span>x +<span class="st"> </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="dv">80</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">size =</span> <span class="fl">1.5</span>)
+  <span class="kw">return</span>(p)
+})
+<span class="co">#&gt; $WT</span>
+<span class="co">#&gt; `geom_smooth()` using method = &#39;loess&#39;</span></code></pre></div>
+<p><img src="NSE_files/figure-html/unnamed-chunk-11-2.png" width="672" /></p>
+<pre><code>#&gt; 
+#&gt; $AGE
+#&gt; `geom_smooth()` using method = &#39;loess&#39;</code></pre>
+<p><img src="NSE_files/figure-html/unnamed-chunk-11-3.png" width="672" /></p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tidyr.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/dpastoor/modernr/edit/master/NSE.Rmd",
+"text": "Edit"
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
