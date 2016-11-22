@@ -1,0 +1,11 @@
+new_session: yes
+
+rmd_files: [
+  "index.Rmd",
+  "data-manip1-solutions.Rmd",
+  "ggplot2_handson_soln.Rmd",
+  "diagnostic-plots_solutions.Rmd",
+  "ggplot_help_jon_solutions.Rmd"
+]
+output_dir: "../docs"
+before_chapter_script: "_common.R"

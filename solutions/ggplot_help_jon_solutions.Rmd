@@ -1,0 +1,176 @@
+# advanced ggplot customizations
+
+Help! Your colleague Jon has come to you for help. He is just starting to use ggplot and is having trouble. Thankfully, he has gotten started on making the necessary plots, and has a good idea what he wants. Your job, should you choose to accept it, is to help finish off the plots Jon has started. 
+
+
+Jon has been kind enough to provide you with a zipped R project. You can unzip the project and click on the .Rproj to open up the project to get you started. 
+
+```{r setup, include=F, eval=F}
+setwd(paste0(getwd(), "/lab-notebook"))
+```
+
+```{r libraries}
+library("dplyr")
+library("ggplot2")
+library("knitr")
+library("PKPDdatasets")
+library("PKPDmisc")
+               
+opts_chunk$set(cache=T, fig.width=9)
+```
+
+The data Jon is working with conventiently comes from the `dapa_iv_oral` dataset in the `PKPDdatasets` package.
+
+Jon's first attempt to make a concentration time plot for each ID looks funny. 
+
+```{r}
+oral_data <- dapa_IV_oral %>% filter(FORMULATION == "ORAL")
+```
+
+```{r}
+kable(head(oral_data))
+```
+
+```{r}
+ggplot(oral_data, aes(x = TAD, y = COBS, group = ID, color = OCC)) + geom_line() + 
+  facet_wrap(~ID)
+```
+
+You will need to help him adjust:
+
+* fix lines (hint - check out `interaction`)
+* fix line color to be discrete
+* rename axes
+* change legend name
+* adjust scale
+* adjust axis labels and numbers for text color and size
+* adjust the output width so the x-axis numbers don't overlap
+
+### to get a final plot that looks like this:
+
+```{r}
+ggplot(oral_data, aes(x = TAD, y = COBS, 
+                      group = interaction(ID, OCC), 
+                      color = factor(OCC))) + 
+  geom_line(size = 1.05) + 
+  facet_wrap(~ID) + base_theme() +
+  xlab("Time After Dose, hours") +
+  ylab("Concentration, ug/mL") +
+  scale_color_discrete(name="Occasion") + scale_y_log10()
+```
+
+
+
+Jon now wants to get a general feel for the covariate weight, and thus wants to color by weight.
+
+```{r}
+ggplot(oral_data, aes(x = TAD, y = COBS, 
+                      group = ID)) + 
+  geom_line(size = 1.05) + 
+  facet_wrap(~OCC) + base_theme() +
+  xlab("Time After Dose, hours") +
+  ylab("Concentration, ug/mL") +
+ scale_y_log10()
+```
+
+He needs your help
+
+* fixing the facet strips to be better labeled
+* add the color to weight
+* getting the plots to be row-wise rather than side-by-side
+
+
+
+### so it will look like this:
+
+```{r}
+occ_labels <- list('1' = "5 mg IV", 
+                   '2'= "5 mg",
+                   '3' = "10 mg",
+                   '4' = "25 mg")
+occ_labeller <- function(variable,value){
+  return(occ_labels[value])
+}
+
+ct_colWT <- ggplot(oral_data, aes(x = TAD, y = COBS, 
+                      group = interaction(ID, OCC), 
+                      color = WEIGHT)) + 
+  geom_line(size = 1.05) + 
+ base_theme() +
+  xlab("Time After Dose, hours") +
+  ylab("Concentration, ug/mL") +
+ scale_y_log10() 
+ct_colWT + facet_grid(OCC~., labeller=occ_labeller)+ theme(strip.text = element_text(size = 16, color="black"))
+```
+
+
+But just in case also wants to see the old side-by-side view as well. 
+
+He needs your help
+
+* change facetting
+* move legend to be below the plot
+
+### so it looks like this:
+
+```{r}
+ct_colWT + facet_grid(.~OCC, labeller=occ_labeller)+ 
+  theme(strip.text = element_text(size = 16, color="black")) + theme(legend.position="bottom")
+```
+
+
+Jon decided to look at the 5 mg dose. He needs help figuring out how to add mean lines. He wants to show that the general trend for males and females is similar and so would like to overlay the geometric mean profile for males and females on the concentration-time plot below.
+
+```{r}
+oral_data_occ2 <- oral_data %>% filter(OCC==2)
+
+# calculate geometric mean here
+```
+
+He did a couple calculations by hand so you can check that the values are the same.
+```{r}
+mean_occ2 <- oral_data %>% filter(OCC==2) %>%
+  group_by(GENDER, TAD) %>% summarize(meanCONC = round(exp(mean(log(COBS))),3))
+head(mean_occ2, n = 3)
+tail(mean_occ2, n = 3)
+```
+
+He's gotten started on the plot but can't figure out how to overlay the profiles.
+
+```{r}
+ggplot(oral_data_occ2, aes(x = TAD, y = COBS, 
+                      group = ID)) + 
+  geom_line(size = 1.05)+ base_theme() +
+  xlab("Time After Dose, hours") +
+  ylab("Concentration, ug/mL") + scale_y_log10()
+```
+
+To get the final result he asks you to:
+
+* calculate the geometric mean values for males and females
+* overlay the results and color by Gender
+* update the legend with the name 'Gender' and Male/Female Labels
+* move the legend to be in the top right corner inside the plot
+* add another break in the y axis for 50
+
+### So it looks like this:
+
+```{r}
+ggplot(oral_data_occ2, aes(x = TAD, y = COBS, 
+                      group = ID)) + 
+  geom_line(size = 1.05)+ base_theme() +
+  xlab("Time After Dose, hours") +
+  ylab("Concentration, ug/mL") +
+  scale_color_discrete(name="Gender", labels= c("Male", "Female")) + 
+    scale_y_log10(breaks = c(1, 10 , 50, 100)) +
+  geom_line(data = mean_occ2, 
+            aes(x = TAD, y = meanCONC, group = GENDER, color = GENDER), size = 1.5)+ 
+    theme(legend.justification=c(1,1), legend.position=c(1,1))
+```
+
+
+
+```{r}
+devtools::session_info()
+```
+

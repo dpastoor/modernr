@@ -1,0 +1,218 @@
+# dplyr data manipulation
+
+
+```{r libraries, message=FALSE, warning=FALSE}
+library(PKPDmisc)
+library(knitr)
+library(tidyverse)
+```
+
+Objectives:
+
+* Import datasets and documents
+* Perform basic data manipulation upon importing the data.
+
+### Task-I
+
+Use the .csv files `demog`, `IV`, and `Oral` provided into the data object folder. 
+
+1. Read in all three csv files  and give them descriptive names (not data1, data2, data3)
+
+```{r}
+demog <- read_csv("../data/demog.csv")
+iv_data <- read_csv("../data/IV.csv")
+oral_data <- read_csv("../data/ORAL.csv")
+```
+
+## DATA MANIPULATION
+The goals of this section:
+
+* Use data manipulation tools to prepare the dataset for analysis
+
+### Task-II
+1.  Rename "DV" column as "COBS"
+
+```{r}
+iv_data <- iv_data %>% rename(COBS = DV)
+oral_data <- oral_data %>% rename(COBS = DV)
+```
+
+2. Add a Formulation column and label IV/Oral for each dataset
+
+```{r}
+iv_data <- iv_data %>% mutate(FORM = "IV")
+oral_data <- oral_data %>% mutate(FORM = "ORAL")
+```
+
+3. Appropriately merge the demographics dataset into the IV and Oral dataset
+4. Create one integrated dataset with both IV and Oral data.
+
+```{r}
+combined_data <- bind_rows(iv_data, oral_data)
+
+## check to see if any ids not in the other
+anti_join(combined_data, demog)
+anti_join(demog, combined_data)
+```
+
+Two individuals do not have any concentration-time data
+
+```{r}
+all_data <- left_join(combined_data, demog)
+```
+
+
+5. Perform the following tasks:
+    a. Ensure that the following columns are numeric and not text: TIME, COBS, WT, AGE, AMT and DOSEs
+
+```{r}
+all_data %>% select(TIME, COBS, WT, AGE, AMT, DOSE) %>% str
+```
+
+COBS is a character column, therefore want to find out what character values exist
+
+```{r}
+# check what character values are present
+unique_non_numerics(all_data$COBS)
+```
+
+    b. Change the following:
+    c. Create a new column called BQLFLAG which takes a value of "0" if there is a numerical value in CObs and "1" if there is "BQL" in CObs.
+    
+```{r}
+# if don't manually specify to handle NA COBS, will also get NA values for BQLFLAG
+all_data <- all_data %>% mutate(BQLFLAG = ifelse(is.na(COBS), 0, 
+                                                 ifelse(COBS == "BQL", 1, 0)),
+                                COBS = as_numeric(COBS))
+```
+
+```{r}
+all_data %>% head %>% kable
+all_data %>% filter(BQLFLAG ==1) %>% kable
+```
+
+    d. Filter the dataset such that you remove all rows where BQLFLAG=1
+        i. WT from lb to kg 
+        iv. CObs from μg/mL to μg/L
+
+```{r}
+f_all_data <- all_data %>% filter(BQLFLAG != 1)
+f_all_data_adjunits <- f_all_data %>% mutate(WT = WT/2.2,
+                                             COBS = COBS*1000)
+```
+
+```{r}
+f_all_data_adjunits %>% head %>% kable
+```
+
+    e. Create a new column called "GENDER" where:
+        i. Female = 0
+        ii. Male = 1 
+    f. Create a new column called RACEN where:
+        i. Caucasian = 0
+        ii. Asian = 1
+        iii. Black = 2
+        iv. Hispanic = 3
+    g. Create a new column called "LOGCOBS" where CObs is in the log scale
+    h. Create a new column called "USUBJID" - unique subject ID as combination of formulation and ID (hint check out `?interaction`)
+    
+    i. Remove the following columns
+    i. SEX
+    ii. RACE
+
+```{r}
+final_data <- f_all_data_adjunits %>% mutate(
+  GENDER = ifelse(SEX == "Female", 0, 1),
+  RACEN = as.numeric(factor(RACE, levels = c("Caucasian", "Asian", "Black", "Hispanic"))),
+  LOGCOBS = log(COBS),
+  USUBJID = interaction(ID, FORM)
+) %>% select(-SEX, -RACE)
+```
+
+
+
+6. Save the above modifications as a new csv file
+
+```{r}
+write_csv(final_data, "iv_oral_alldat.csv", na = ".")
+```
+
+## Descriptive Statistics
+
+Objectives
+
+* How to make summaries of the data using descriptive statistics and other data manipulation tools (dplyr, base R functions etc)
+
+### Task III
+
+
+1. show a summary for all demographic columns
+
+```{r}
+final_data <- final_data %>% 
+  mutate(GENDER = as.factor(GENDER),
+         RACEN = as.factor(RACEN))
+uid_final_data <- final_data %>% distinct(ID, .keep_all = TRUE)
+
+uid_final_data %>% 
+  select(WT, AGE, GENDER, RACEN) %>%
+ summary %>% kable
+```
+
+
+2. Count the number of males/females in the dataset
+```{r}
+# be careful only 1 row per id if calculating this way
+uid_final_data %>% nrow
+# or
+n_distinct(uid_final_data$ID)
+```
+
+
+3. Count the number of subjects in each "Race" category
+
+```{r}
+uid_final_data %>%  
+  group_by(RACEN) %>% 
+  tally
+```
+
+4. calculate the min, mean, and max values for WT, AGE:
+    a. by Gender
+```{r}
+uid_final_data %>% 
+  select(GENDER, WT, AGE) %>%
+  group_by(GENDER) %>% 
+  summarize_all(funs(min, mean, max)) %>% 
+  kable
+```
+
+    b. by Race
+    
+```{r}
+uid_final_data %>% select(RACEN, WT, AGE) %>%
+  group_by(RACEN) %>% 
+  summarize_all(funs(min, mean, max)) %>% 
+  kable
+```
+
+5. What is the Average numbers samples(observations) per individual in this dataset. Hint: make sure you are *only* counting samples, not necessarily all rows are observations!
+
+```{r}
+# don't want dosing observations
+final_data %>% filter(is.na(AMT)) %>% group_by(ID) %>% 
+  summarize(num_obs = n()) %>%
+  summarize(avg_samples = mean(num_obs))
+```
+
+
+6. Calculate the Mean, 5th, and 95th percentile concentration at each time point for each formulation and dose level. hint: you can use `?quantile` to calculate various quantiles
+
+```{r}
+final_data %>%
+  group_by(TIME) %>% 
+  s_quantiles(COBS, probs = c(0.05, 0.5, 0.95)) %>% 
+  kable
+```
+
+

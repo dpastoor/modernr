@@ -1,0 +1,9 @@
+bookdown::gitbook:
+  config:
+    toc:
+      collapse: section
+    edit:
+      link: https://github.com/dpastoor/modernr/edit/master/%s
+      text: "Edit"
+    sharing: no
+  css: modernr.css
