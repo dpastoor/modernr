@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="diagnostic-plots.html">
-
+<link rel="next" href="tidyr.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -120,6 +120,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.0.2" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-will-look-like-this"><i class="fa fa-check"></i><b>4.0.2</b> so it will look like this:</a></li>
 <li class="chapter" data-level="4.0.3" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this"><i class="fa fa-check"></i><b>4.0.3</b> so it looks like this:</a></li>
 <li class="chapter" data-level="4.0.4" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this-1"><i class="fa fa-check"></i><b>4.0.4</b> So it looks like this:</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tidyr.html"><a href="tidyr.html"><i class="fa fa-check"></i><b>5</b> Tidyr</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="tidyr.html"><a href="tidyr.html#single-plot-example"><i class="fa fa-check"></i><b>5.0.1</b> Single plot example</a></li>
+<li class="chapter" data-level="5.0.2" data-path="tidyr.html"><a href="tidyr.html#iterate-through-multiple-eta-values"><i class="fa fa-check"></i><b>5.0.2</b> Iterate through multiple ETA values</a></li>
+<li class="chapter" data-level="5.1" data-path="tidyr.html"><a href="tidyr.html#double-stack"><i class="fa fa-check"></i><b>5.1</b> Double stack</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="tidyr.html"><a href="tidyr.html#plot-all-releationships"><i class="fa fa-check"></i><b>5.1.1</b> plot all releationships</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -260,7 +267,7 @@ opts_chunk$<span class="kw">set</span>(<span class="dt">cache=</span>T, <span cl
 </table>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(oral_data, <span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> COBS, <span class="dt">group =</span> ID, <span class="dt">color =</span> OCC)) +<span class="st"> </span><span class="kw">geom_line</span>() +<span class="st"> </span>
 <span class="st">  </span><span class="kw">facet_wrap</span>(~ID)</code></pre></div>
-<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-4-1.png" width="864" /></p>
+<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>You will need to help him adjust:</p>
 <ul>
 <li>fix lines (hint - check out <code>interaction</code>)</li>
@@ -282,7 +289,7 @@ opts_chunk$<span class="kw">set</span>(<span class="dt">cache=</span>T, <span cl
 <span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Concentration, ug/mL&quot;</span>) +
 <span class="st">  </span><span class="kw">scale_color_discrete</span>(<span class="dt">name=</span><span class="st">&quot;Occasion&quot;</span>) +<span class="st"> </span><span class="kw">scale_y_log10</span>()
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></code></pre></div>
-<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-5-1.png" width="864" /></p>
+<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Jon now wants to get a general feel for the covariate weight, and thus wants to color by weight.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(oral_data, <span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> COBS, 
                       <span class="dt">group =</span> ID)) +<span class="st"> </span>
@@ -292,7 +299,7 @@ opts_chunk$<span class="kw">set</span>(<span class="dt">cache=</span>T, <span cl
 <span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Concentration, ug/mL&quot;</span>) +
 <span class="st"> </span><span class="kw">scale_y_log10</span>()
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></code></pre></div>
-<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-6-1.png" width="864" /></p>
+<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>He needs your help</p>
 <ul>
 <li>fixing the facet strips to be better labeled</li>
@@ -322,7 +329,7 @@ ct_colWT +<span class="st"> </span><span class="kw">facet_grid</span>(OCC~., <sp
 <span class="co">#&gt; Warning: The labeller API has been updated. Labellers taking `variable`and</span>
 <span class="co">#&gt; `value` arguments are now deprecated. See labellers documentation.</span>
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></code></pre></div>
-<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-7-1.png" width="864" /></p>
+<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>But just in case also wants to see the old side-by-side view as well.</p>
 <p>He needs your help</p>
 <ul>
@@ -337,7 +344,7 @@ ct_colWT +<span class="st"> </span><span class="kw">facet_grid</span>(OCC~., <sp
 <span class="co">#&gt; Warning: The labeller API has been updated. Labellers taking `variable`and</span>
 <span class="co">#&gt; `value` arguments are now deprecated. See labellers documentation.</span>
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></code></pre></div>
-<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-8-1.png" width="864" /></p>
+<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Jon decided to look at the 5 mg dose. He needs help figuring out how to add mean lines. He wants to show that the general trend for males and females is similar and so would like to overlay the geometric mean profile for males and females on the concentration-time plot below.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">oral_data_occ2 &lt;-<span class="st"> </span>oral_data %&gt;%<span class="st"> </span><span class="kw">filter</span>(OCC==<span class="dv">2</span>)
 
@@ -370,7 +377,7 @@ ct_colWT +<span class="st"> </span><span class="kw">facet_grid</span>(OCC~., <sp
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Time After Dose, hours&quot;</span>) +
 <span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Concentration, ug/mL&quot;</span>) +<span class="st"> </span><span class="kw">scale_y_log10</span>()
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></code></pre></div>
-<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-11-1.png" width="864" /></p>
+<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>To get the final result he asks you to:</p>
 <ul>
 <li>calculate the geometric mean values for males and females</li>
@@ -395,7 +402,7 @@ ct_colWT +<span class="st"> </span><span class="kw">facet_grid</span>(OCC~., <sp
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
 
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></code></pre></div>
-<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-12-1.png" width="864" /></p>
+<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">session_info</span>()
 <span class="co">#&gt; Session info --------------------------------------------------------------</span>
 <span class="co">#&gt;  setting  value                       </span>
@@ -491,8 +498,8 @@ ct_colWT +<span class="st"> </span><span class="kw">facet_grid</span>(OCC~., <sp
           </div>
         </div>
       </div>
-<a href="diagnostic-plots.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="diagnostic-plots.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tidyr.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>

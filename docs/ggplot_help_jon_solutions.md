@@ -58,7 +58,7 @@ ggplot(oral_data, aes(x = TAD, y = COBS, group = ID, color = OCC)) + geom_line()
   facet_wrap(~ID)
 ```
 
-<img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-4-1.png" width="864" />
+<img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 You will need to help him adjust:
 
@@ -85,7 +85,7 @@ ggplot(oral_data, aes(x = TAD, y = COBS,
 #> Warning: Transformation introduced infinite values in continuous y-axis
 ```
 
-<img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-5-1.png" width="864" />
+<img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 
 
 
@@ -103,7 +103,7 @@ ggplot(oral_data, aes(x = TAD, y = COBS,
 #> Warning: Transformation introduced infinite values in continuous y-axis
 ```
 
-<img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-6-1.png" width="864" />
+<img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 
 He needs your help
 
@@ -139,7 +139,7 @@ ct_colWT + facet_grid(OCC~., labeller=occ_labeller)+ theme(strip.text = element_
 #> Warning: Transformation introduced infinite values in continuous y-axis
 ```
 
-<img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-7-1.png" width="864" />
+<img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
 
 But just in case also wants to see the old side-by-side view as well. 
@@ -160,7 +160,7 @@ ct_colWT + facet_grid(.~OCC, labeller=occ_labeller)+
 #> Warning: Transformation introduced infinite values in continuous y-axis
 ```
 
-<img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-8-1.png" width="864" />
+<img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
 
 Jon decided to look at the 5 mg dose. He needs help figuring out how to add mean lines. He wants to show that the general trend for males and females is similar and so would like to overlay the geometric mean profile for males and females on the concentration-time plot below.
@@ -209,7 +209,7 @@ ggplot(oral_data_occ2, aes(x = TAD, y = COBS,
 #> Warning: Transformation introduced infinite values in continuous y-axis
 ```
 
-<img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-11-1.png" width="864" />
+<img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 
 To get the final result he asks you to:
 
@@ -238,7 +238,7 @@ ggplot(oral_data_occ2, aes(x = TAD, y = COBS,
 #> Warning: Transformation introduced infinite values in continuous y-axis
 ```
 
-<img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-12-1.png" width="864" />
+<img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 
 
 

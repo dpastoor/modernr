@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Modern R Solutions</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="solutions to the modern R exercises">
+  <meta name="generator" content="bookdown 0.2 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Modern R Solutions" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="<a href="http://www.devinpastoor.com/modernr/" class="uri">http://www.devinpastoor.com/modernr/</a>" />
+  
+  <meta property="og:description" content="solutions to the modern R exercises" />
+  <meta name="github-repo" content="dpastoor/modernr" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Modern R Solutions" />
+  <meta name="twitter:site" content="@devinpastoor" />
+  <meta name="twitter:description" content="solutions to the modern R exercises" />
+  
+
+<meta name="author" content="Devin Pastoor">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="advanced-ggplot-customizations.html">
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="modernr.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html"><i class="fa fa-check"></i><b>1</b> dplyr data manipulation</a><ul>
+<li class="chapter" data-level="1.0.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#task-i"><i class="fa fa-check"></i><b>1.0.1</b> Task-I</a></li>
+<li class="chapter" data-level="1.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#data-manipulation"><i class="fa fa-check"></i><b>1.1</b> DATA MANIPULATION</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#task-ii"><i class="fa fa-check"></i><b>1.1.1</b> Task-II</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#descriptive-statistics"><i class="fa fa-check"></i><b>1.2</b> Descriptive Statistics</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#task-iii"><i class="fa fa-check"></i><b>1.2.1</b> Task III</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html"><i class="fa fa-check"></i><b>2</b> Introduction to ggplot2</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#xy-plots"><i class="fa fa-check"></i><b>2.1</b> XY Plots</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#boxplots-and-histograms"><i class="fa fa-check"></i><b>2.2</b> Boxplots and Histograms</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="diagnostic-plots.html"><a href="diagnostic-plots.html"><i class="fa fa-check"></i><b>3</b> Diagnostic Plots</a></li>
+<li class="chapter" data-level="4" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html"><i class="fa fa-check"></i><b>4</b> advanced ggplot customizations</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#to-get-a-final-plot-that-looks-like-this"><i class="fa fa-check"></i><b>4.0.1</b> to get a final plot that looks like this:</a></li>
+<li class="chapter" data-level="4.0.2" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-will-look-like-this"><i class="fa fa-check"></i><b>4.0.2</b> so it will look like this:</a></li>
+<li class="chapter" data-level="4.0.3" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this"><i class="fa fa-check"></i><b>4.0.3</b> so it looks like this:</a></li>
+<li class="chapter" data-level="4.0.4" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this-1"><i class="fa fa-check"></i><b>4.0.4</b> So it looks like this:</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tidyr.html"><a href="tidyr.html"><i class="fa fa-check"></i><b>5</b> Tidyr</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="tidyr.html"><a href="tidyr.html#single-plot-example"><i class="fa fa-check"></i><b>5.0.1</b> Single plot example</a></li>
+<li class="chapter" data-level="5.0.2" data-path="tidyr.html"><a href="tidyr.html#iterate-through-multiple-eta-values"><i class="fa fa-check"></i><b>5.0.2</b> Iterate through multiple ETA values</a></li>
+<li class="chapter" data-level="5.1" data-path="tidyr.html"><a href="tidyr.html#double-stack"><i class="fa fa-check"></i><b>5.1</b> Double stack</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="tidyr.html"><a href="tidyr.html#plot-all-releationships"><i class="fa fa-check"></i><b>5.1.1</b> plot all releationships</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modern R Solutions</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tidyr" class="section level1">
+<h1><span class="header-section-number">5</span> Tidyr</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(PKPDmisc)
+<span class="kw">library</span>(knitr)
+<span class="kw">library</span>(lazyeval)
+<span class="kw">library</span>(tidyverse)
+<span class="co">#&gt; Loading tidyverse: tibble</span>
+<span class="co">#&gt; Loading tidyverse: readr</span>
+<span class="co">#&gt; Loading tidyverse: purrr</span>
+<span class="co">#&gt; Loading tidyverse: dplyr</span>
+<span class="co">#&gt; Conflicts with tidy packages ----------------------------------------------</span>
+<span class="co">#&gt; filter():     dplyr, stats</span>
+<span class="co">#&gt; is_formula(): purrr, lazyeval</span>
+<span class="co">#&gt; lag():        dplyr, stats</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">eta_cov &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;../data/ebe_cov.csv&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">kable</span>(<span class="kw">head</span>(eta_cov))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">ID</th>
+<th align="right">ETA1</th>
+<th align="right">ETA2</th>
+<th align="right">ETA3</th>
+<th align="right">ETA4</th>
+<th align="right">ETA5</th>
+<th align="right">ETA6</th>
+<th align="right">ETA7</th>
+<th align="right">ETA8</th>
+<th align="right">ETA9</th>
+<th align="right">BW</th>
+<th align="right">BMI</th>
+<th align="right">AGE</th>
+<th align="right">AST</th>
+<th align="right">ALT</th>
+<th align="right">CRCL</th>
+<th align="right">SEX</th>
+<th align="right">RACE</th>
+<th align="right">ETHNIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0.160</td>
+<td align="right">-0.067</td>
+<td align="right">0</td>
+<td align="right">-0.195</td>
+<td align="right">0.058</td>
+<td align="right">0.083</td>
+<td align="right">0.167</td>
+<td align="right">0.204</td>
+<td align="right">-0.114</td>
+<td align="right">109.4</td>
+<td align="right">38.3</td>
+<td align="right">48</td>
+<td align="right">13</td>
+<td align="right">17</td>
+<td align="right">131</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">0.681</td>
+<td align="right">0.165</td>
+<td align="right">0</td>
+<td align="right">0.276</td>
+<td align="right">-0.107</td>
+<td align="right">0.099</td>
+<td align="right">-1.562</td>
+<td align="right">0.355</td>
+<td align="right">0.056</td>
+<td align="right">120.2</td>
+<td align="right">31.3</td>
+<td align="right">53</td>
+<td align="right">38</td>
+<td align="right">77</td>
+<td align="right">177</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">0.480</td>
+<td align="right">0.017</td>
+<td align="right">0</td>
+<td align="right">-0.302</td>
+<td align="right">0.062</td>
+<td align="right">-0.287</td>
+<td align="right">0.260</td>
+<td align="right">-0.152</td>
+<td align="right">0.022</td>
+<td align="right">83.0</td>
+<td align="right">24.5</td>
+<td align="right">32</td>
+<td align="right">26</td>
+<td align="right">35</td>
+<td align="right">111</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">0.339</td>
+<td align="right">0.001</td>
+<td align="right">0</td>
+<td align="right">-0.105</td>
+<td align="right">0.079</td>
+<td align="right">-0.228</td>
+<td align="right">-0.326</td>
+<td align="right">-0.138</td>
+<td align="right">0.105</td>
+<td align="right">64.2</td>
+<td align="right">21.0</td>
+<td align="right">33</td>
+<td align="right">19</td>
+<td align="right">20</td>
+<td align="right">97</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">-0.139</td>
+<td align="right">0.187</td>
+<td align="right">0</td>
+<td align="right">0.155</td>
+<td align="right">0.260</td>
+<td align="right">0.122</td>
+<td align="right">-1.381</td>
+<td align="right">0.220</td>
+<td align="right">-0.063</td>
+<td align="right">74.4</td>
+<td align="right">26.1</td>
+<td align="right">47</td>
+<td align="right">16</td>
+<td align="right">25</td>
+<td align="right">93</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">-0.115</td>
+<td align="right">0.060</td>
+<td align="right">0</td>
+<td align="right">-0.063</td>
+<td align="right">0.230</td>
+<td align="right">-0.328</td>
+<td align="right">0.317</td>
+<td align="right">-0.492</td>
+<td align="right">0.076</td>
+<td align="right">68.4</td>
+<td align="right">21.8</td>
+<td align="right">32</td>
+<td align="right">15</td>
+<td align="right">24</td>
+<td align="right">103</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+g_eta_cov &lt;-<span class="st"> </span>eta_cov %&gt;%<span class="st"> </span>
+<span class="st">    </span><span class="kw">gather</span>(cov_name, cov_value, BW:CRCL)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">kable</span>(<span class="kw">head</span>(g_eta_cov))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">ID</th>
+<th align="right">ETA1</th>
+<th align="right">ETA2</th>
+<th align="right">ETA3</th>
+<th align="right">ETA4</th>
+<th align="right">ETA5</th>
+<th align="right">ETA6</th>
+<th align="right">ETA7</th>
+<th align="right">ETA8</th>
+<th align="right">ETA9</th>
+<th align="right">SEX</th>
+<th align="right">RACE</th>
+<th align="right">ETHNIC</th>
+<th align="left">cov_name</th>
+<th align="right">cov_value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0.160</td>
+<td align="right">-0.067</td>
+<td align="right">0</td>
+<td align="right">-0.195</td>
+<td align="right">0.058</td>
+<td align="right">0.083</td>
+<td align="right">0.167</td>
+<td align="right">0.204</td>
+<td align="right">-0.114</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">BW</td>
+<td align="right">109.4</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">0.681</td>
+<td align="right">0.165</td>
+<td align="right">0</td>
+<td align="right">0.276</td>
+<td align="right">-0.107</td>
+<td align="right">0.099</td>
+<td align="right">-1.562</td>
+<td align="right">0.355</td>
+<td align="right">0.056</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">BW</td>
+<td align="right">120.2</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">0.480</td>
+<td align="right">0.017</td>
+<td align="right">0</td>
+<td align="right">-0.302</td>
+<td align="right">0.062</td>
+<td align="right">-0.287</td>
+<td align="right">0.260</td>
+<td align="right">-0.152</td>
+<td align="right">0.022</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">BW</td>
+<td align="right">83.0</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">0.339</td>
+<td align="right">0.001</td>
+<td align="right">0</td>
+<td align="right">-0.105</td>
+<td align="right">0.079</td>
+<td align="right">-0.228</td>
+<td align="right">-0.326</td>
+<td align="right">-0.138</td>
+<td align="right">0.105</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">BW</td>
+<td align="right">64.2</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">-0.139</td>
+<td align="right">0.187</td>
+<td align="right">0</td>
+<td align="right">0.155</td>
+<td align="right">0.260</td>
+<td align="right">0.122</td>
+<td align="right">-1.381</td>
+<td align="right">0.220</td>
+<td align="right">-0.063</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">BW</td>
+<td align="right">74.4</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">-0.115</td>
+<td align="right">0.060</td>
+<td align="right">0</td>
+<td align="right">-0.063</td>
+<td align="right">0.230</td>
+<td align="right">-0.328</td>
+<td align="right">0.317</td>
+<td align="right">-0.492</td>
+<td align="right">0.076</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">BW</td>
+<td align="right">68.4</td>
+</tr>
+</tbody>
+</table>
+<p>lazily evaluated function for ggplot plots</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">eta_cov_scatter &lt;-<span class="st"> </span>function(df, <span class="dt">xval =</span> <span class="st">&quot;cov_value&quot;</span>, yval, <span class="dt">cov_name =</span> <span class="st">&quot;cov_name&quot;</span>) {
+  lazy_plot &lt;-<span class="st"> </span>lazyeval::<span class="kw">interp</span>(~<span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x =</span> cov_value, <span class="dt">y =</span> ETA1)) +
+<span class="st">    </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">facet_wrap</span>(~cov_name, <span class="dt">scales=</span><span class="st">&quot;free&quot;</span>),
+    <span class="dt">cov_value =</span> <span class="kw">as.name</span>(xval),
+    <span class="dt">ETA1 =</span> <span class="kw">as.name</span>(yval),
+    <span class="dt">cov_name =</span> <span class="kw">as.name</span>(cov_name))
+  <span class="kw">return</span>(lazyeval::<span class="kw">lazy_eval</span>(lazy_plot))
+}</code></pre></div>
+<div id="single-plot-example" class="section level3">
+<h3><span class="header-section-number">5.0.1</span> Single plot example</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">eta_cov_scatter</span>(g_eta_cov, <span class="dt">yval =</span> <span class="st">&quot;ETA1&quot;</span>)</code></pre></div>
+<p><img src="tidyr_gathering_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="iterate-through-multiple-eta-values" class="section level3">
+<h3><span class="header-section-number">5.0.2</span> Iterate through multiple ETA values</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lapply</span>(<span class="kw">paste0</span>(<span class="st">&quot;ETA&quot;</span>, <span class="dv">1</span>:<span class="dv">4</span>), function(eta, g_eta_cov) {
+  <span class="kw">eta_cov_scatter</span>(g_eta_cov, <span class="dt">yval =</span> eta)
+}, g_eta_cov)
+<span class="co">#&gt; [[1]]</span></code></pre></div>
+<p><img src="tidyr_gathering_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<pre><code>#&gt; 
+#&gt; [[2]]</code></pre>
+<p><img src="tidyr_gathering_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
+<pre><code>#&gt; 
+#&gt; [[3]]</code></pre>
+<p><img src="tidyr_gathering_files/figure-html/unnamed-chunk-9-3.png" width="672" /></p>
+<pre><code>#&gt; 
+#&gt; [[4]]</code></pre>
+<p><img src="tidyr_gathering_files/figure-html/unnamed-chunk-9-4.png" width="672" /></p>
+</div>
+<div id="double-stack" class="section level2">
+<h2><span class="header-section-number">5.1</span> Double stack</h2>
+<p>We can actually gather again</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+g2_eta_cov &lt;-<span class="st"> </span>g_eta_cov %&gt;%<span class="st"> </span><span class="kw">gather</span>(eta_name, eta_value, ETA1:ETA9 )
+
+<span class="kw">kable</span>(<span class="kw">head</span>(g2_eta_cov))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">ID</th>
+<th align="right">SEX</th>
+<th align="right">RACE</th>
+<th align="right">ETHNIC</th>
+<th align="left">cov_name</th>
+<th align="right">cov_value</th>
+<th align="left">eta_name</th>
+<th align="right">eta_value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">BW</td>
+<td align="right">109.4</td>
+<td align="left">ETA1</td>
+<td align="right">0.160</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">BW</td>
+<td align="right">120.2</td>
+<td align="left">ETA1</td>
+<td align="right">0.681</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">BW</td>
+<td align="right">83.0</td>
+<td align="left">ETA1</td>
+<td align="right">0.480</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">BW</td>
+<td align="right">64.2</td>
+<td align="left">ETA1</td>
+<td align="right">0.339</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">BW</td>
+<td align="right">74.4</td>
+<td align="left">ETA1</td>
+<td align="right">-0.139</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">BW</td>
+<td align="right">68.4</td>
+<td align="left">ETA1</td>
+<td align="right">-0.115</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">kable</span>(<span class="kw">tail</span>(g2_eta_cov))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">ID</th>
+<th align="right">SEX</th>
+<th align="right">RACE</th>
+<th align="right">ETHNIC</th>
+<th align="left">cov_name</th>
+<th align="right">cov_value</th>
+<th align="left">eta_name</th>
+<th align="right">eta_value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3289</td>
+<td align="right">91</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">CRCL</td>
+<td align="right">161</td>
+<td align="left">ETA9</td>
+<td align="right">0.008</td>
+</tr>
+<tr class="even">
+<td>3290</td>
+<td align="right">92</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">CRCL</td>
+<td align="right">124</td>
+<td align="left">ETA9</td>
+<td align="right">0.052</td>
+</tr>
+<tr class="odd">
+<td>3291</td>
+<td align="right">93</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">CRCL</td>
+<td align="right">136</td>
+<td align="left">ETA9</td>
+<td align="right">0.134</td>
+</tr>
+<tr class="even">
+<td>3292</td>
+<td align="right">95</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">CRCL</td>
+<td align="right">213</td>
+<td align="left">ETA9</td>
+<td align="right">0.073</td>
+</tr>
+<tr class="odd">
+<td>3293</td>
+<td align="right">97</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">CRCL</td>
+<td align="right">127</td>
+<td align="left">ETA9</td>
+<td align="right">-0.007</td>
+</tr>
+<tr class="even">
+<td>3294</td>
+<td align="right">98</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">CRCL</td>
+<td align="right">86</td>
+<td align="left">ETA9</td>
+<td align="right">0.026</td>
+</tr>
+</tbody>
+</table>
+<p>Then we can split up the plots</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">split_eta_cov &lt;-<span class="st"> </span>g2_eta_cov %&gt;%<span class="st"> </span><span class="kw">split</span>(.$cov_name)</code></pre></div>
+<div id="plot-all-releationships" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> plot all releationships</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lapply</span>(split_eta_cov, function(x) {
+   cov_name &lt;-<span class="st"> </span><span class="kw">unique</span>(x$cov_name)
+  <span class="kw">ggplot</span>(x, <span class="kw">aes</span>(<span class="dt">x =</span> cov_value, <span class="dt">y =</span> eta_value)) +
+<span class="st">    </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">facet_wrap</span>(~eta_name, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>) +
+<span class="st">    </span><span class="kw">geom_smooth</span>(<span class="dt">se =</span> F) +
+<span class="st">    </span><span class="kw">ggtitle</span>(cov_name) +
+<span class="st">    </span><span class="kw">xlab</span>(cov_name) 
+}) 
+<span class="co">#&gt; $AGE</span>
+<span class="co">#&gt; `geom_smooth()` using method = &#39;loess&#39;</span></code></pre></div>
+<p><img src="tidyr_gathering_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre><code>#&gt; 
+#&gt; $ALT
+#&gt; `geom_smooth()` using method = &#39;loess&#39;</code></pre>
+<p><img src="tidyr_gathering_files/figure-html/unnamed-chunk-12-2.png" width="672" /></p>
+<pre><code>#&gt; 
+#&gt; $AST
+#&gt; `geom_smooth()` using method = &#39;loess&#39;</code></pre>
+<p><img src="tidyr_gathering_files/figure-html/unnamed-chunk-12-3.png" width="672" /></p>
+<pre><code>#&gt; 
+#&gt; $BMI
+#&gt; `geom_smooth()` using method = &#39;loess&#39;</code></pre>
+<p><img src="tidyr_gathering_files/figure-html/unnamed-chunk-12-4.png" width="672" /></p>
+<pre><code>#&gt; 
+#&gt; $BW
+#&gt; `geom_smooth()` using method = &#39;loess&#39;</code></pre>
+<p><img src="tidyr_gathering_files/figure-html/unnamed-chunk-12-5.png" width="672" /></p>
+<pre><code>#&gt; 
+#&gt; $CRCL
+#&gt; `geom_smooth()` using method = &#39;loess&#39;</code></pre>
+<p><img src="tidyr_gathering_files/figure-html/unnamed-chunk-12-6.png" width="672" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="advanced-ggplot-customizations.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/dpastoor/modernr/edit/master/tidyr_gathering.Rmd",
+"text": "Edit"
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
