@@ -2,6 +2,8 @@ bookdown::gitbook:
   config:
     toc:
       collapse: section
+      before: |
+        <li><strong><a href="./"> Modern R Solutions </a></strong></li>
     edit:
       link: https://github.com/dpastoor/modernr/edit/master/%s
       text: "Edit"
