@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Modern R Solutions</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="solutions to the modern R exercises">
+  <meta name="generator" content="bookdown 0.2 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Modern R Solutions" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="<a href="http://www.devinpastoor.com/modernr/" class="uri">http://www.devinpastoor.com/modernr/</a>" />
+  
+  <meta property="og:description" content="solutions to the modern R exercises" />
+  <meta name="github-repo" content="dpastoor/modernr" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Modern R Solutions" />
+  <meta name="twitter:site" content="@devinpastoor" />
+  <meta name="twitter:description" content="solutions to the modern R exercises" />
+  
+
+<meta name="author" content="Devin Pastoor">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="introduction-to-ggplot2.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="modernr.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html"><i class="fa fa-check"></i><b>1</b> dplyr data manipulation</a><ul>
+<li class="chapter" data-level="1.0.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#task-i"><i class="fa fa-check"></i><b>1.0.1</b> Task-I</a></li>
+<li class="chapter" data-level="1.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#data-manipulation"><i class="fa fa-check"></i><b>1.1</b> DATA MANIPULATION</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#task-ii"><i class="fa fa-check"></i><b>1.1.1</b> Task-II</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#descriptive-statistics"><i class="fa fa-check"></i><b>1.2</b> Descriptive Statistics</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#task-iii"><i class="fa fa-check"></i><b>1.2.1</b> Task III</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html"><i class="fa fa-check"></i><b>2</b> Introduction to ggplot2</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#xy-plots"><i class="fa fa-check"></i><b>2.1</b> XY Plots</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#boxplots-and-histograms"><i class="fa fa-check"></i><b>2.2</b> Boxplots and Histograms</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="diagnostic-plots.html"><a href="diagnostic-plots.html"><i class="fa fa-check"></i><b>3</b> Diagnostic Plots</a></li>
+<li class="chapter" data-level="4" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html"><i class="fa fa-check"></i><b>4</b> advanced ggplot customizations</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#to-get-a-final-plot-that-looks-like-this"><i class="fa fa-check"></i><b>4.0.1</b> to get a final plot that looks like this:</a></li>
+<li class="chapter" data-level="4.0.2" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-will-look-like-this"><i class="fa fa-check"></i><b>4.0.2</b> so it will look like this:</a></li>
+<li class="chapter" data-level="4.0.3" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this"><i class="fa fa-check"></i><b>4.0.3</b> so it looks like this:</a></li>
+<li class="chapter" data-level="4.0.4" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this-1"><i class="fa fa-check"></i><b>4.0.4</b> So it looks like this:</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modern R Solutions</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="dplyr-data-manipulation" class="section level1">
+<h1><span class="header-section-number">1</span> dplyr data manipulation</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(PKPDmisc)
+<span class="kw">library</span>(knitr)
+<span class="kw">library</span>(tidyverse)</code></pre></div>
+<p>Objectives:</p>
+<ul>
+<li>Import datasets and documents</li>
+<li>Perform basic data manipulation upon importing the data.</li>
+</ul>
+<div id="task-i" class="section level3">
+<h3><span class="header-section-number">1.0.1</span> Task-I</h3>
+<p>Use the .csv files <code>demog</code>, <code>IV</code>, and <code>Oral</code> provided into the data object folder.</p>
+<ol style="list-style-type: decimal">
+<li>Read in all three csv files and give them descriptive names (not data1, data2, data3)</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">demog &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;../data/demog.csv&quot;</span>)
+<span class="co">#&gt; Parsed with column specification:</span>
+<span class="co">#&gt; cols(</span>
+<span class="co">#&gt;   ID = col_integer(),</span>
+<span class="co">#&gt;   SEX = col_character(),</span>
+<span class="co">#&gt;   WT = col_double(),</span>
+<span class="co">#&gt;   AGE = col_integer(),</span>
+<span class="co">#&gt;   RACE = col_character()</span>
+<span class="co">#&gt; )</span>
+iv_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;../data/IV.csv&quot;</span>)
+<span class="co">#&gt; Parsed with column specification:</span>
+<span class="co">#&gt; cols(</span>
+<span class="co">#&gt;   ID = col_integer(),</span>
+<span class="co">#&gt;   TIME = col_double(),</span>
+<span class="co">#&gt;   DV = col_character(),</span>
+<span class="co">#&gt;   AMT = col_integer(),</span>
+<span class="co">#&gt;   DOSE = col_integer()</span>
+<span class="co">#&gt; )</span>
+oral_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;../data/ORAL.csv&quot;</span>)
+<span class="co">#&gt; Parsed with column specification:</span>
+<span class="co">#&gt; cols(</span>
+<span class="co">#&gt;   ID = col_integer(),</span>
+<span class="co">#&gt;   TIME = col_double(),</span>
+<span class="co">#&gt;   DV = col_character(),</span>
+<span class="co">#&gt;   AMT = col_integer(),</span>
+<span class="co">#&gt;   DOSE = col_integer()</span>
+<span class="co">#&gt; )</span></code></pre></div>
+</div>
+<div id="data-manipulation" class="section level2">
+<h2><span class="header-section-number">1.1</span> DATA MANIPULATION</h2>
+<p>The goals of this section:</p>
+<ul>
+<li>Use data manipulation tools to prepare the dataset for analysis</li>
+</ul>
+<div id="task-ii" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Task-II</h3>
+<ol style="list-style-type: decimal">
+<li>Rename “DV” column as “COBS”</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iv_data &lt;-<span class="st"> </span>iv_data %&gt;%<span class="st"> </span><span class="kw">rename</span>(<span class="dt">COBS =</span> DV)
+oral_data &lt;-<span class="st"> </span>oral_data %&gt;%<span class="st"> </span><span class="kw">rename</span>(<span class="dt">COBS =</span> DV)</code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Add a Formulation column and label IV/Oral for each dataset</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iv_data &lt;-<span class="st"> </span>iv_data %&gt;%<span class="st"> </span><span class="kw">mutate</span>(<span class="dt">FORM =</span> <span class="st">&quot;IV&quot;</span>)
+oral_data &lt;-<span class="st"> </span>oral_data %&gt;%<span class="st"> </span><span class="kw">mutate</span>(<span class="dt">FORM =</span> <span class="st">&quot;ORAL&quot;</span>)</code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Appropriately merge the demographics dataset into the IV and Oral dataset</li>
+<li>Create one integrated dataset with both IV and Oral data.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">combined_data &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(iv_data, oral_data)
+
+## check to see if any ids not in the other
+<span class="kw">anti_join</span>(combined_data, demog)
+<span class="co">#&gt; Joining, by = &quot;ID&quot;</span>
+<span class="co">#&gt; # A tibble: 0 × 6</span>
+<span class="co">#&gt; # ... with 6 variables: ID &lt;int&gt;, TIME &lt;dbl&gt;, COBS &lt;chr&gt;, AMT &lt;int&gt;,</span>
+<span class="co">#&gt; #   DOSE &lt;int&gt;, FORM &lt;chr&gt;</span>
+<span class="kw">anti_join</span>(demog, combined_data)
+<span class="co">#&gt; Joining, by = &quot;ID&quot;</span>
+<span class="co">#&gt; # A tibble: 2 × 5</span>
+<span class="co">#&gt;      ID    SEX    WT   AGE      RACE</span>
+<span class="co">#&gt;   &lt;int&gt;  &lt;chr&gt; &lt;dbl&gt; &lt;int&gt;     &lt;chr&gt;</span>
+<span class="co">#&gt; 1    51   Male    60    28 Caucasian</span>
+<span class="co">#&gt; 2    52 Female    70    33     Asian</span></code></pre></div>
+<p>Two individuals do not have any concentration-time data</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">all_data &lt;-<span class="st"> </span><span class="kw">left_join</span>(combined_data, demog)
+<span class="co">#&gt; Joining, by = &quot;ID&quot;</span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li>Perform the following tasks:
+<ol style="list-style-type: lower-alpha">
+<li>Ensure that the following columns are numeric and not text: TIME, COBS, WT, AGE, AMT and DOSEs</li>
+</ol></li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">all_data %&gt;%<span class="st"> </span><span class="kw">select</span>(TIME, COBS, WT, AGE, AMT, DOSE) %&gt;%<span class="st"> </span>str
+<span class="co">#&gt; Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    1200 obs. of  6 variables:</span>
+<span class="co">#&gt;  $ TIME: num  0 0.25 0.5 1 2 3 4 6 8 12 ...</span>
+<span class="co">#&gt;  $ COBS: chr  NA &quot;1273.5&quot; &quot;995.38&quot; &quot;1254.7&quot; ...</span>
+<span class="co">#&gt;  $ WT  : num  56.8 56.8 56.8 56.8 56.8 56.8 56.8 56.8 56.8 56.8 ...</span>
+<span class="co">#&gt;  $ AGE : int  28 28 28 28 28 28 28 28 28 28 ...</span>
+<span class="co">#&gt;  $ AMT : int  100 NA NA NA NA NA NA NA NA NA ...</span>
+<span class="co">#&gt;  $ DOSE: int  100 100 100 100 100 100 100 100 100 100 ...</span></code></pre></div>
+<p>COBS is a character column, therefore want to find out what character values exist</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># check what character values are present</span>
+<span class="kw">unique_non_numerics</span>(all_data$COBS)
+<span class="co">#&gt; [1] &quot;BQL&quot;</span></code></pre></div>
+<pre><code>b. Change the following:
+c. Create a new column called BQLFLAG which takes a value of &quot;0&quot; if there is a numerical value in CObs and &quot;1&quot; if there is &quot;BQL&quot; in CObs.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># if don&#39;t manually specify to handle NA COBS, will also get NA values for BQLFLAG</span>
+all_data &lt;-<span class="st"> </span>all_data %&gt;%<span class="st"> </span><span class="kw">mutate</span>(<span class="dt">BQLFLAG =</span> <span class="kw">ifelse</span>(<span class="kw">is.na</span>(COBS), <span class="dv">0</span>, 
+                                                 <span class="kw">ifelse</span>(COBS ==<span class="st"> &quot;BQL&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)),
+                                <span class="dt">COBS =</span> <span class="kw">as_numeric</span>(COBS))
+<span class="co">#&gt; Warning in as_numeric(c(NA, &quot;1273.5&quot;, &quot;995.38&quot;, &quot;1254.7&quot;, &quot;1037.6&quot;,</span>
+<span class="co">#&gt; &quot;1135.4&quot;, : NAs introduced by coercion</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">all_data %&gt;%<span class="st"> </span>head %&gt;%<span class="st"> </span>kable</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">ID</th>
+<th align="right">TIME</th>
+<th align="right">COBS</th>
+<th align="right">AMT</th>
+<th align="right">DOSE</th>
+<th align="left">FORM</th>
+<th align="left">SEX</th>
+<th align="right">WT</th>
+<th align="right">AGE</th>
+<th align="left">RACE</th>
+<th align="right">BQLFLAG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0.00</td>
+<td align="right">NA</td>
+<td align="right">100</td>
+<td align="right">100</td>
+<td align="left">IV</td>
+<td align="left">Female</td>
+<td align="right">56.8</td>
+<td align="right">28</td>
+<td align="left">Hispanic</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">0.25</td>
+<td align="right">1274</td>
+<td align="right">NA</td>
+<td align="right">100</td>
+<td align="left">IV</td>
+<td align="left">Female</td>
+<td align="right">56.8</td>
+<td align="right">28</td>
+<td align="left">Hispanic</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0.50</td>
+<td align="right">995</td>
+<td align="right">NA</td>
+<td align="right">100</td>
+<td align="left">IV</td>
+<td align="left">Female</td>
+<td align="right">56.8</td>
+<td align="right">28</td>
+<td align="left">Hispanic</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1.00</td>
+<td align="right">1255</td>
+<td align="right">NA</td>
+<td align="right">100</td>
+<td align="left">IV</td>
+<td align="left">Female</td>
+<td align="right">56.8</td>
+<td align="right">28</td>
+<td align="left">Hispanic</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">2.00</td>
+<td align="right">1038</td>
+<td align="right">NA</td>
+<td align="right">100</td>
+<td align="left">IV</td>
+<td align="left">Female</td>
+<td align="right">56.8</td>
+<td align="right">28</td>
+<td align="left">Hispanic</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">3.00</td>
+<td align="right">1135</td>
+<td align="right">NA</td>
+<td align="right">100</td>
+<td align="left">IV</td>
+<td align="left">Female</td>
+<td align="right">56.8</td>
+<td align="right">28</td>
+<td align="left">Hispanic</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">all_data %&gt;%<span class="st"> </span><span class="kw">filter</span>(BQLFLAG ==<span class="dv">1</span>) %&gt;%<span class="st"> </span>kable</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">ID</th>
+<th align="right">TIME</th>
+<th align="right">COBS</th>
+<th align="right">AMT</th>
+<th align="right">DOSE</th>
+<th align="left">FORM</th>
+<th align="left">SEX</th>
+<th align="right">WT</th>
+<th align="right">AGE</th>
+<th align="left">RACE</th>
+<th align="right">BQLFLAG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">100</td>
+<td align="left">IV</td>
+<td align="left">Male</td>
+<td align="right">80.9</td>
+<td align="right">31</td>
+<td align="left">Asian</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">100</td>
+<td align="left">ORAL</td>
+<td align="left">Male</td>
+<td align="right">80.9</td>
+<td align="right">31</td>
+<td align="left">Asian</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<pre><code>d. Filter the dataset such that you remove all rows where BQLFLAG=1
+    i. WT from lb to kg 
+    iv. CObs from μg/mL to μg/L</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">f_all_data &lt;-<span class="st"> </span>all_data %&gt;%<span class="st"> </span><span class="kw">filter</span>(BQLFLAG !=<span class="st"> </span><span class="dv">1</span>)
+f_all_data_adjunits &lt;-<span class="st"> </span>f_all_data %&gt;%<span class="st"> </span><span class="kw">mutate</span>(<span class="dt">WT =</span> WT/<span class="fl">2.2</span>,
+                                             <span class="dt">COBS =</span> COBS*<span class="dv">1000</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">f_all_data_adjunits %&gt;%<span class="st"> </span>head %&gt;%<span class="st"> </span>kable</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">ID</th>
+<th align="right">TIME</th>
+<th align="right">COBS</th>
+<th align="right">AMT</th>
+<th align="right">DOSE</th>
+<th align="left">FORM</th>
+<th align="left">SEX</th>
+<th align="right">WT</th>
+<th align="right">AGE</th>
+<th align="left">RACE</th>
+<th align="right">BQLFLAG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0.00</td>
+<td align="right">NA</td>
+<td align="right">100</td>
+<td align="right">100</td>
+<td align="left">IV</td>
+<td align="left">Female</td>
+<td align="right">25.8</td>
+<td align="right">28</td>
+<td align="left">Hispanic</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">0.25</td>
+<td align="right">1273500</td>
+<td align="right">NA</td>
+<td align="right">100</td>
+<td align="left">IV</td>
+<td align="left">Female</td>
+<td align="right">25.8</td>
+<td align="right">28</td>
+<td align="left">Hispanic</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0.50</td>
+<td align="right">995380</td>
+<td align="right">NA</td>
+<td align="right">100</td>
+<td align="left">IV</td>
+<td align="left">Female</td>
+<td align="right">25.8</td>
+<td align="right">28</td>
+<td align="left">Hispanic</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1.00</td>
+<td align="right">1254700</td>
+<td align="right">NA</td>
+<td align="right">100</td>
+<td align="left">IV</td>
+<td align="left">Female</td>
+<td align="right">25.8</td>
+<td align="right">28</td>
+<td align="left">Hispanic</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">2.00</td>
+<td align="right">1037600</td>
+<td align="right">NA</td>
+<td align="right">100</td>
+<td align="left">IV</td>
+<td align="left">Female</td>
+<td align="right">25.8</td>
+<td align="right">28</td>
+<td align="left">Hispanic</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">3.00</td>
+<td align="right">1135400</td>
+<td align="right">NA</td>
+<td align="right">100</td>
+<td align="left">IV</td>
+<td align="left">Female</td>
+<td align="right">25.8</td>
+<td align="right">28</td>
+<td align="left">Hispanic</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<pre><code>e. Create a new column called &quot;GENDER&quot; where:
+    i. Female = 0
+    ii. Male = 1 
+f. Create a new column called RACEN where:
+    i. Caucasian = 0
+    ii. Asian = 1
+    iii. Black = 2
+    iv. Hispanic = 3
+g. Create a new column called &quot;LOGCOBS&quot; where CObs is in the log scale
+h. Create a new column called &quot;USUBJID&quot; - unique subject ID as combination of formulation and ID (hint check out `?interaction`)
+
+i. Remove the following columns
+i. SEX
+ii. RACE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">final_data &lt;-<span class="st"> </span>f_all_data_adjunits %&gt;%<span class="st"> </span><span class="kw">mutate</span>(
+  <span class="dt">GENDER =</span> <span class="kw">ifelse</span>(SEX ==<span class="st"> &quot;Female&quot;</span>, <span class="dv">0</span>, <span class="dv">1</span>),
+  <span class="dt">RACEN =</span> <span class="kw">as.numeric</span>(<span class="kw">factor</span>(RACE, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;Caucasian&quot;</span>, <span class="st">&quot;Asian&quot;</span>, <span class="st">&quot;Black&quot;</span>, <span class="st">&quot;Hispanic&quot;</span>))),
+  <span class="dt">LOGCOBS =</span> <span class="kw">log</span>(COBS),
+  <span class="dt">USUBJID =</span> <span class="kw">interaction</span>(ID, FORM)
+) %&gt;%<span class="st"> </span><span class="kw">select</span>(-SEX, -RACE)</code></pre></div>
+<ol start="6" style="list-style-type: decimal">
+<li>Save the above modifications as a new csv file</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write_csv</span>(final_data, <span class="st">&quot;iv_oral_alldat.csv&quot;</span>, <span class="dt">na =</span> <span class="st">&quot;.&quot;</span>)</code></pre></div>
+</div>
+</div>
+<div id="descriptive-statistics" class="section level2">
+<h2><span class="header-section-number">1.2</span> Descriptive Statistics</h2>
+<p>Objectives</p>
+<ul>
+<li>How to make summaries of the data using descriptive statistics and other data manipulation tools (dplyr, base R functions etc)</li>
+</ul>
+<div id="task-iii" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Task III</h3>
+<ol style="list-style-type: decimal">
+<li>show a summary for all demographic columns</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">final_data &lt;-<span class="st"> </span>final_data %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">GENDER =</span> <span class="kw">as.factor</span>(GENDER),
+         <span class="dt">RACEN =</span> <span class="kw">as.factor</span>(RACEN))
+uid_final_data &lt;-<span class="st"> </span>final_data %&gt;%<span class="st"> </span><span class="kw">distinct</span>(ID, <span class="dt">.keep_all =</span> <span class="ot">TRUE</span>)
+
+uid_final_data %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(WT, AGE, GENDER, RACEN) %&gt;%
+<span class="st"> </span>summary %&gt;%<span class="st"> </span>kable</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">WT</th>
+<th align="center">AGE</th>
+<th align="left">GENDER</th>
+<th align="left">RACEN</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td align="center">Min. :23.8</td>
+<td align="center">Min. :20.0</td>
+<td align="left">0:28</td>
+<td align="left">1:17</td>
+</tr>
+<tr class="even">
+<td></td>
+<td align="center">1st Qu.:26.6</td>
+<td align="center">1st Qu.:31.0</td>
+<td align="left">1:22</td>
+<td align="left">2: 8</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td align="center">Median :29.1</td>
+<td align="center">Median :39.5</td>
+<td align="left">NA</td>
+<td align="left">3:12</td>
+</tr>
+<tr class="even">
+<td></td>
+<td align="center">Mean :29.1</td>
+<td align="center">Mean :38.5</td>
+<td align="left">NA</td>
+<td align="left">4:13</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td align="center">3rd Qu.:31.3</td>
+<td align="center">3rd Qu.:48.0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td></td>
+<td align="center">Max. :36.8</td>
+<td align="center">Max. :59.0</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+<ol start="2" style="list-style-type: decimal">
+<li>Count the number of males/females in the dataset</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># be careful only 1 row per id if calculating this way</span>
+uid_final_data %&gt;%<span class="st"> </span>nrow
+<span class="co">#&gt; [1] 50</span>
+<span class="co"># or</span>
+<span class="kw">n_distinct</span>(uid_final_data$ID)
+<span class="co">#&gt; [1] 50</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Count the number of subjects in each “Race” category</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">uid_final_data %&gt;%<span class="st">  </span>
+<span class="st">  </span><span class="kw">group_by</span>(RACEN) %&gt;%<span class="st"> </span>
+<span class="st">  </span>tally
+<span class="co">#&gt; # A tibble: 4 × 2</span>
+<span class="co">#&gt;    RACEN     n</span>
+<span class="co">#&gt;   &lt;fctr&gt; &lt;int&gt;</span>
+<span class="co">#&gt; 1      1    17</span>
+<span class="co">#&gt; 2      2     8</span>
+<span class="co">#&gt; 3      3    12</span>
+<span class="co">#&gt; 4      4    13</span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>calculate the min, mean, and max values for WT, AGE:
+<ol style="list-style-type: lower-alpha">
+<li>by Gender</li>
+</ol></li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">uid_final_data %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(GENDER, WT, AGE) %&gt;%
+<span class="st">  </span><span class="kw">group_by</span>(GENDER) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">summarize_all</span>(<span class="kw">funs</span>(min, mean, max)) %&gt;%<span class="st"> </span>
+<span class="st">  </span>kable</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">GENDER</th>
+<th align="right">WT_min</th>
+<th align="right">AGE_min</th>
+<th align="right">WT_mean</th>
+<th align="right">AGE_mean</th>
+<th align="right">WT_max</th>
+<th align="right">AGE_max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0</td>
+<td align="right">23.8</td>
+<td align="right">20</td>
+<td align="right">27.0</td>
+<td align="right">37.0</td>
+<td align="right">31.4</td>
+<td align="right">51</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="right">29.2</td>
+<td align="right">28</td>
+<td align="right">31.8</td>
+<td align="right">40.5</td>
+<td align="right">36.8</td>
+<td align="right">59</td>
+</tr>
+</tbody>
+</table>
+<pre><code>b. by Race</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">uid_final_data %&gt;%<span class="st"> </span><span class="kw">select</span>(RACEN, WT, AGE) %&gt;%
+<span class="st">  </span><span class="kw">group_by</span>(RACEN) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">summarize_all</span>(<span class="kw">funs</span>(min, mean, max)) %&gt;%<span class="st"> </span>
+<span class="st">  </span>kable</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">RACEN</th>
+<th align="right">WT_min</th>
+<th align="right">AGE_min</th>
+<th align="right">WT_mean</th>
+<th align="right">AGE_mean</th>
+<th align="right">WT_max</th>
+<th align="right">AGE_max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="right">23.8</td>
+<td align="right">20</td>
+<td align="right">28.3</td>
+<td align="right">40.1</td>
+<td align="right">35.5</td>
+<td align="right">51</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="right">24.1</td>
+<td align="right">22</td>
+<td align="right">29.4</td>
+<td align="right">36.1</td>
+<td align="right">36.8</td>
+<td align="right">50</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="right">23.9</td>
+<td align="right">26</td>
+<td align="right">29.1</td>
+<td align="right">36.0</td>
+<td align="right">35.0</td>
+<td align="right">51</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="right">25.8</td>
+<td align="right">22</td>
+<td align="right">30.0</td>
+<td align="right">40.2</td>
+<td align="right">33.7</td>
+<td align="right">59</td>
+</tr>
+</tbody>
+</table>
+<ol start="5" style="list-style-type: decimal">
+<li>What is the Average numbers samples(observations) per individual in this dataset. Hint: make sure you are <em>only</em> counting samples, not necessarily all rows are observations!</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># don&#39;t want dosing observations</span>
+final_data %&gt;%<span class="st"> </span><span class="kw">filter</span>(<span class="kw">is.na</span>(AMT)) %&gt;%<span class="st"> </span><span class="kw">group_by</span>(ID) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">num_obs =</span> <span class="kw">n</span>()) %&gt;%
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">avg_samples =</span> <span class="kw">mean</span>(num_obs))
+<span class="co">#&gt; # A tibble: 1 × 1</span>
+<span class="co">#&gt;   avg_samples</span>
+<span class="co">#&gt;         &lt;dbl&gt;</span>
+<span class="co">#&gt; 1          22</span></code></pre></div>
+<ol start="6" style="list-style-type: decimal">
+<li>Calculate the Mean, 5th, and 95th percentile concentration at each time point for each formulation and dose level. hint: you can use <code>?quantile</code> to calculate various quantiles</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">final_data %&gt;%
+<span class="st">  </span><span class="kw">group_by</span>(TIME) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">s_quantiles</span>(COBS, <span class="dt">probs =</span> <span class="kw">c</span>(<span class="fl">0.05</span>, <span class="fl">0.5</span>, <span class="fl">0.95</span>)) %&gt;%<span class="st"> </span>
+<span class="st">  </span>kable</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">TIME</th>
+<th align="right">COBS_q5</th>
+<th align="right">COBS_q50</th>
+<th align="right">COBS_q95</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.00</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="right">0.25</td>
+<td align="right">179528</td>
+<td align="right">1013450</td>
+<td align="right">6299400</td>
+</tr>
+<tr class="odd">
+<td align="right">0.50</td>
+<td align="right">315901</td>
+<td align="right">1339500</td>
+<td align="right">6196680</td>
+</tr>
+<tr class="even">
+<td align="right">1.00</td>
+<td align="right">516881</td>
+<td align="right">1602900</td>
+<td align="right">4941020</td>
+</tr>
+<tr class="odd">
+<td align="right">2.00</td>
+<td align="right">661580</td>
+<td align="right">1556600</td>
+<td align="right">4623085</td>
+</tr>
+<tr class="even">
+<td align="right">3.00</td>
+<td align="right">609477</td>
+<td align="right">1407150</td>
+<td align="right">4218805</td>
+</tr>
+<tr class="odd">
+<td align="right">4.00</td>
+<td align="right">538884</td>
+<td align="right">1237250</td>
+<td align="right">3752430</td>
+</tr>
+<tr class="even">
+<td align="right">6.00</td>
+<td align="right">350257</td>
+<td align="right">882890</td>
+<td align="right">2881720</td>
+</tr>
+<tr class="odd">
+<td align="right">8.00</td>
+<td align="right">170944</td>
+<td align="right">736590</td>
+<td align="right">2139750</td>
+</tr>
+<tr class="even">
+<td align="right">12.00</td>
+<td align="right">86539</td>
+<td align="right">372920</td>
+<td align="right">1449365</td>
+</tr>
+<tr class="odd">
+<td align="right">16.00</td>
+<td align="right">28623</td>
+<td align="right">198495</td>
+<td align="right">987036</td>
+</tr>
+<tr class="even">
+<td align="right">24.00</td>
+<td align="right">3748</td>
+<td align="right">81368</td>
+<td align="right">550874</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introduction-to-ggplot2.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/dpastoor/modernr/edit/master/data-manip1-solutions.Rmd",
+"text": "Edit"
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
