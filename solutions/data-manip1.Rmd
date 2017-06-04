@@ -1,0 +1,206 @@
+---
+title: "data manipulation hands-on"
+author: "Devin"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  word_document: default
+---
+
+```{r}
+library(knitr)
+library(tidyverse)
+library(PKPDmisc)
+```
+
+## DATA IMPORT
+
+
+Objectives:
+
+* Import datasets and documents
+* Perform basic data manipulation upon importing the data.
+
+```{r}
+pk_data <- read_csv("../data/pk_data.csv")
+```
+
+```{r}
+head(pk_data)
+```
+
+
+## DATA MANIPULATION
+
+The goals of this section:
+
+* Use data manipulation tools to prepare the dataset for analysis
+
+
+1.  Rename "DV" column as "COBS"
+
+```{r}
+pk_data_cobs <- pk_data %>% rename(COBS = DV)
+```
+
+
+4. Perform the following tasks:
+
+a. Ensure that the following columns are numeric and not text: TIME, COBS, WT, AGE, AMT and DOSEs
+    
+```{r}
+glimpse(pk_data_cobs)
+```
+
+```{r}
+unique_non_numerics(pk_data_cobs$COBS)
+```
+
+
+b. Create a new column called BQLFLAG which takes a value of 
+`0` if there is a numerical value in CObs and `1` if there is "BQL" in CObs.
+    
+```{r}
+pk_data_cobs <- pk_data_cobs %>% 
+  mutate(BQLFLAG = ifelse(COBS == "BQL", 1, 0),
+        NONNUMERICS = ifelse(COBS %in% unique_non_numerics(COBS), 1, 0)) 
+```
+
+    c. Create a new column called "GENDER" where:
+        i. Female = 0
+        ii. Male = 1 
+    d. Create a new column called RACEN where:
+        i. Caucasian = 0
+        ii. Asian = 1
+        iii. Black = 2
+        iv. Hispanic = 3
+
+```{r}
+pk_data_cobs <- pk_data_cobs %>%
+  mutate(RACEN = ifelse(RACE == "Caucasian", 0,
+                       ifelse(RACE == "Asian", 1,
+                              ifelse(RACE == "Black",2,
+                                     ifelse(RACE == "Hispanic", 3, -99))))) 
+```
+
+f. Create a new column called "IDF" - unique subject ID as combination of formulation and ID 
+
+```{r}
+pk_data_cobs <- pk_data_cobs %>% mutate(IDF = paste(ID, FORM, sep = "-"))
+```
+
+g. Remove the following columns
+    i. SEX
+    ii. RACE
+   
+```{r}
+pk_data_output <- pk_data_cobs %>% select(-SEX, -RACE)
+```
+
+```{r}
+head(pk_data_output) %>% kable()
+```
+
+Save the above modifications as a new csv file
+
+```{r}
+write_csv(pk_data_output, "../data/pk_data_output.csv")
+```
+
+## Descriptive Statistics
+
+1. show a summary for all demographic columns
+
+```{r}
+# single row per id
+sid_pk_data <- pk_data_cobs %>%
+  distinct(ID, .keep_all = TRUE) 
+
+sid_pk_data %>%
+  select(WT, AGE, RACE, SEX) %>%
+  mutate(RACE = as.factor(RACE),
+         SEX = as.factor(SEX)) %>%
+  summary
+```
+
+2. Count the number of subjects in each "Race" category
+
+```{r}
+# fastest
+sid_pk_data %>% count(RACE) %>% kable()
+```
+
+```{r eval = F}
+# more manual
+sid_pk_data %>%
+  group_by(RACE) %>%
+  tally
+
+# most manual but have more control over column names
+sid_pk_data %>%
+  group_by(RACE) %>%
+  summarize(num_per_race = n()) %>%
+  kable()
+```
+
+
+3. calculate the min, mean, and max values for WT, AGE:
+    a. by Sex
+
+```{r}
+sid_pk_data %>%
+  group_by(SEX) %>%
+  summarize(
+    WT_min = min(WT),
+    WT_mean = mean(WT),
+    WT_max = max(WT),
+    AGE_min = min(AGE),
+    AGE_mean = mean(AGE),
+    AGE_max = max(AGE)
+  ) %>%
+  kable()
+```
+
+there are also targeted verbs in the form `<verb>_at` that can specify what
+columns to act on, and which functions to run
+
+```{r}
+sid_pk_data %>%
+  group_by(SEX) %>%
+  summarize_at(vars(WT, AGE), funs(min, mean, max)) %>%
+  kable()
+```
+
+    
+4. What is the Average numbers samples(observations) per individual in this dataset. 
+Hint: make sure you are *only* counting samples, rows with AMT values are not considered observations.
+
+```{r}
+# observations are those with NA AMT values
+pk_data_cobs %>%
+  filter(is.na(AMT)) %>%
+  group_by(ID) %>%
+  summarize(num_obs = n()) %>%
+  # ungroup so no longer calculating by grouping variable ID
+  ungroup %>%
+  summarize(average_obs = mean(num_obs)) %>% kable()
+```
+
+
+5. Calculate the Mean, 5th, and 95th percentile concentration at each time point for each formulation and dose level. hint: you can use `?quantile` to calculate various quantiles
+
+```{r}
+pk_data_cobs %>%
+    mutate(COBS = as.numeric(COBS)) %>%
+    filter(!is.na(COBS)) %>%
+    group_by(TIME, FORM, DOSE) %>%
+    summarize(q05 = quantile(COBS, 0.05),
+              meanconc = mean(COBS),
+              q95 = quantile(COBS, 0.95)) %>%
+  arrange(FORM, DOSE, TIME) %>% kable()
+```
+
+```{r}
+devtools::session_info()
+```
+
