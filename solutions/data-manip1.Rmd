@@ -58,12 +58,13 @@ unique_non_numerics(pk_data_cobs$COBS)
 
 
 b. Create a new column called BQLFLAG which takes a value of 
-`0` if there is a numerical value in CObs and `1` if there is "BQL" in CObs.
+`0` if there is a numerical value in CObs and `1` if there is "BQL" in COBS.
     
 ```{r}
 pk_data_cobs <- pk_data_cobs %>% 
   mutate(BQLFLAG = ifelse(COBS == "BQL", 1, 0),
-        NONNUMERICS = ifelse(COBS %in% unique_non_numerics(COBS), 1, 0)) 
+        NONNUMERICS = ifelse(COBS %in% unique_non_numerics(COBS), 1, 0),
+        COBS = as_numeric(COBS)) 
 ```
 
     c. Create a new column called "GENDER" where:
@@ -197,7 +198,7 @@ pk_data_cobs %>%
     summarize(q05 = quantile(COBS, 0.05),
               meanconc = mean(COBS),
               q95 = quantile(COBS, 0.95)) %>%
-  arrange(FORM, DOSE, TIME) %>% kable()
+  arrange(FORM, DOSE, TIME) %>% head %>% kable()
 ```
 
 ```{r}
