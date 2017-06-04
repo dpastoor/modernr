@@ -1,4 +1,4 @@
-# dplyr data manipulation
+## dplyr data manipulation
 
 
 ```{r libraries, message=FALSE, warning=FALSE}
@@ -24,7 +24,6 @@ iv_data <- read_csv("../data/IV.csv")
 oral_data <- read_csv("../data/ORAL.csv")
 ```
 
-## DATA MANIPULATION
 The goals of this section:
 
 * Use data manipulation tools to prepare the dataset for analysis
@@ -130,21 +129,13 @@ final_data <- f_all_data_adjunits %>% mutate(
 ```
 
 
-
 6. Save the above modifications as a new csv file
 
 ```{r}
 write_csv(final_data, "iv_oral_alldat.csv", na = ".")
 ```
 
-## Descriptive Statistics
-
-Objectives
-
-* How to make summaries of the data using descriptive statistics and other data manipulation tools (dplyr, base R functions etc)
-
-### Task III
-
+### Summary Statistics
 
 1. show a summary for all demographic columns
 
