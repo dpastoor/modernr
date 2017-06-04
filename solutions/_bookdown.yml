@@ -7,7 +7,7 @@ rmd_files: [
   "diagnostic-plots_solutions.Rmd",
   "ggplot_help_jon_solutions.Rmd",
   "tidyr_gathering.Rmd",
-  "NSE.Rmd"
+  "NSE_legacy.Rmd"
 ]
 output_dir: "../docs"
 before_chapter_script: "_common.R"
