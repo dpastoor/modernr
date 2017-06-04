@@ -2,12 +2,14 @@ new_session: yes
 
 rmd_files: [
   "index.Rmd",
-  "data-manip1-solutions.Rmd",
   "ggplot2_handson_soln.Rmd",
-  "diagnostic-plots_solutions.Rmd",
+  "data-manip1.Rmd",
   "ggplot_help_jon_solutions.Rmd",
+  "tidying_data.Rmd",
   "tidyr_gathering.Rmd",
+  "data-manip1_legacy.Rmd",
   "NSE_legacy.Rmd"
+  "diagnostic-plots_legacy.Rmd",
 ]
 output_dir: "../docs"
 before_chapter_script: "_common.R"
