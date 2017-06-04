@@ -64,7 +64,7 @@ b. Create a new column called BQLFLAG which takes a value of
 pk_data_cobs <- pk_data_cobs %>% 
   mutate(BQLFLAG = ifelse(COBS == "BQL", 1, 0),
         NONNUMERICS = ifelse(COBS %in% unique_non_numerics(COBS), 1, 0),
-        COBS = as_numeric(COBS)) 
+        COBS = as_numeric(COBS))
 ```
 
     c. Create a new column called "GENDER" where:
@@ -78,7 +78,11 @@ pk_data_cobs <- pk_data_cobs %>%
 
 ```{r}
 pk_data_cobs <- pk_data_cobs %>%
-  mutate(RACEN = ifelse(RACE == "Caucasian", 0,
+  mutate(
+      GENDER = factor(SEX, 
+                      levels = c(0, 1), 
+                      labels = c("Female", "Male")),
+      RACEN = ifelse(RACE == "Caucasian", 0,
                        ifelse(RACE == "Asian", 1,
                               ifelse(RACE == "Black",2,
                                      ifelse(RACE == "Hispanic", 3, -99))))) 
@@ -196,9 +200,10 @@ pk_data_cobs %>%
     filter(!is.na(COBS)) %>%
     group_by(TIME, FORM, DOSE) %>%
     summarize(q05 = quantile(COBS, 0.05),
-              meanconc = mean(COBS),
+              q50 = quantile(COBS, 0.5),
               q95 = quantile(COBS, 0.95)) %>%
-  arrange(FORM, DOSE, TIME) %>% head %>% kable()
+  arrange(FORM, DOSE, TIME) %>% 
+  head %>% kable()
 ```
 
 ```{r}
