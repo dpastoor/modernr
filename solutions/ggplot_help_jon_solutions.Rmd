@@ -26,7 +26,9 @@ kable(head(oral_data))
 ```
 
 ```{r}
-ggplot(oral_data, aes(x = TAD, y = COBS, group = ID, color = OCC)) + geom_line() + 
+ggplot(oral_data, 
+       aes(x = TAD, y = COBS, group = ID, color = OCC)) + 
+    geom_line() + 
   facet_wrap(~ID)
 ```
 
@@ -78,13 +80,12 @@ He needs your help
 ### so it will look like this:
 
 ```{r}
-occ_labels <- list('1' = "5 mg IV", 
-                   '2'= "5 mg",
-                   '3' = "10 mg",
-                   '4' = "25 mg")
-occ_labeller <- function(variable,value){
-  return(occ_labels[value])
-}
+occ_labels <- c(
+    '1' = "5 mg IV", 
+    '2'= "5 mg",
+    '3' = "10 mg",
+    '4' = "25 mg"
+)
 
 ct_colWT <- ggplot(oral_data, aes(x = TAD, y = COBS, 
                       group = interaction(ID, OCC), 
@@ -94,7 +95,12 @@ ct_colWT <- ggplot(oral_data, aes(x = TAD, y = COBS,
   xlab("Time After Dose, hours") +
   ylab("Concentration, ug/mL") +
  scale_y_log10() 
-ct_colWT + facet_grid(OCC~., labeller=occ_labeller)+ theme(strip.text = element_text(size = 16, color="black"))
+```
+
+```{r}
+ct_colWT + 
+    facet_grid(OCC~., labeller=labeller(OCC = occ_labels)) +
+    theme(strip.text = element_text(size = 16, color="black"))
 ```
 
 
@@ -108,8 +114,10 @@ He needs your help
 ### so it looks like this:
 
 ```{r}
-ct_colWT + facet_grid(.~OCC, labeller=occ_labeller)+ 
-  theme(strip.text = element_text(size = 16, color="black")) + theme(legend.position="bottom")
+ct_colWT + 
+    facet_grid(OCC~., labeller=labeller(OCC = occ_labels)) +
+    theme(strip.text = element_text(size = 16, color="black")) +
+    theme(legend.position="bottom")
 ```
 
 
@@ -123,8 +131,11 @@ oral_data_occ2 <- oral_data %>% filter(OCC==2)
 
 He did a couple calculations by hand so you can check that the values are the same.
 ```{r}
-mean_occ2 <- oral_data %>% filter(OCC==2) %>%
-  group_by(GENDER, TAD) %>% summarize(meanCONC = round(exp(mean(log(COBS))),3))
+mean_occ2 <- oral_data %>% 
+    filter(OCC==2) %>%
+    group_by(GENDER, TAD) %>% 
+    summarize(meanCONC = round(exp(mean(log(COBS))),3))
+
 head(mean_occ2, n = 3)
 tail(mean_occ2, n = 3)
 ```
@@ -152,17 +163,21 @@ To get the final result he asks you to:
 ```{r}
 ggplot(oral_data_occ2, aes(x = TAD, y = COBS, 
                       group = ID)) + 
-  geom_line(size = 1.05)+ base_theme() +
-  xlab("Time After Dose, hours") +
-  ylab("Concentration, ug/mL") +
-  scale_color_discrete(name="Gender", labels= c("Male", "Female")) + 
+    geom_line(size = 1.05)+ 
+    base_theme() +
+    xlab("Time After Dose, hours") +
+    ylab("Concentration, ug/mL") +
+    scale_color_discrete(name="Gender", 
+                       labels= c("Male", "Female")) + 
     scale_y_log10(breaks = c(1, 10 , 50, 100)) +
-  geom_line(data = mean_occ2, 
-            aes(x = TAD, y = meanCONC, group = GENDER, color = GENDER), size = 1.5)+ 
+    geom_line(data = mean_occ2, 
+            aes(x = TAD, 
+                y = meanCONC, 
+                group = GENDER, 
+                color = GENDER
+                ), size = 1.5)+ 
     theme(legend.justification=c(1,1), legend.position=c(1,1))
 ```
-
-
 
 ```{r}
 devtools::session_info()
