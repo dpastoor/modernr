@@ -1,0 +1,95 @@
+# Diagnostic Plots
+
+1) read in the csv datasets:
+
+* Residuals
+
+```{r}
+library(PKPDmisc)
+library(knitr)
+library(tidyverse)
+```
+
+```{r}
+resid <- read_csv("../data/Residuals.csv")
+```
+
+* Create a Res vs Time function with loess fits for the central tendency and the spread (hint abs() is your friend for the spread). 
+    * Conditionally allow the loess curve of central tendency to appear, 
+    with a default of TRUE. 
+    * Users should be able to specify the residual column name.
+
+```{r}
+gg_res_tad <- function(df, .tad, .res, .show_loess = TRUE) {
+    .tad <- rlang::enexpr(.tad)
+    .res <- rlang::enexpr(.res)
+    ple <- rlang::quo(
+        df %>%
+          ggplot(aes(x = !!.tad, y = !!.res)) + geom_point() +
+          stat_smooth(data = df %>%
+                        mutate(!!.res := abs(!!.res)), 
+                      se = F, color = "blue") +
+          stat_smooth(data = df %>%
+                        mutate(!!.res := -abs(!!.res)), 
+                      se = F, color = "blue") +
+            theme_bw()
+    )
+    output <- rlang::eval_tidy(ple) 
+    if (.show_loess) {
+       return(
+           output + 
+            stat_smooth(method = "loess", se=F, color = "red")
+       ) 
+    }
+    return(output)
+}
+```
+
+
+### CWRES vs time after dose (TAD)
+
+```{r}
+gg_res_tad(resid, TAD, CWRES)
+```
+
+* update your function to flag any point over some threshold as red, with a default of absolute difference of > 2.5 
+
+```{r}
+gg_res_tad <- function(df, .tad, .res, .threshold = 2.5, .show_loess = TRUE) {
+    .tad <- rlang::enexpr(.tad)
+    .res <- rlang::enexpr(.res)
+    ple <- rlang::quo(
+     df %>% 
+        mutate(HIGHRES__ = ifelse(abs(!!.res) > .threshold, 1, 0)) %>%
+          ggplot(aes(x = !!.tad, y = !!.res)) +
+          geom_point(aes(color = factor(HIGHRES__))) +
+          scale_color_manual(values = c("black", "red"), 
+                             name = "Outlier", 
+                             labels = c("not outlier", "outlier")) +
+          stat_smooth(data = df %>%
+                        mutate(!!.res := abs(!!.res)), 
+                      se = F, color = "blue") +
+          stat_smooth(data = df %>%
+                        mutate(!!.res := -abs(!!.res)), 
+                      se = F, color = "blue") +
+            theme_bw()
+    )
+    output <- rlang::eval_tidy(ple) 
+    if (.show_loess) {
+       return(
+           output + 
+            stat_smooth(method = "loess", se=F, color = "red")
+       ) 
+    }
+    return(output)
+}
+```
+
+```{r}
+gg_res_tad(resid, TAD, CWRES)
+```
+
+```{r}
+devtools::session_info()
+```
+
