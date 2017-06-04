@@ -82,15 +82,19 @@ There are a couple ways of doing this:
 1) on the fly mutate the the values to labels
 
 ```{r}
-data1 %>% 
-  mutate(GENDER = factor(GENDER, 
+# this is the only time you will see assigning to a column directly
+# in this workshop, we encourage to always use mutate to manage columns
+# in a dataframe, however as it has not been formally introduced we're
+# using base R here
+data1$GENDER <-  factor(data1$GENDER, 
                          levels = c(0, 1), 
-                         labels = c("Male", "Female"))) %>%
-           ggplot(aes(x = TIME, y = COBS, group = ID)) +
-  geom_point(size = 2.5) + geom_line(size = 1.1) +
-  scale_y_log10() +
+                         labels = c("Male", "Female")) 
+data1 %>%
+    ggplot(aes(x = TIME, y = COBS, group = ID)) +
+    geom_point(size = 2.5) + geom_line(size = 1.1) +
+    scale_y_log10() +
     theme(legend.position = c(1, 1), legend.justification = c(1, 1)) +
-  facet_wrap(~GENDER)
+    facet_wrap(~GENDER)
 ```
 
 Use facet_grid with the labeller argument
@@ -102,41 +106,6 @@ data1 %>%
   scale_y_log10() +
     theme(legend.position = c(1, 1), legend.justification = c(1, 1)) +
   facet_grid(.~GENDER, labeller = label_both)
-```
-
-*note: the newest version of ggplot2 has changed the labeller behavior, when you have a factor that you want to
-display both the underlying value and the label, you should now use `labeller = labe_both`, as shown below
-7) add mean conc-time profile and color red
-```{r}
-data1 %>% 
-   ggplot(aes(x = TIME, y = COBS, group = ID)) +
-  geom_point(size = 2.5) + geom_line(size = 1.1) +
-  scale_y_log10() +
-    theme(legend.position = c(1, 1), legend.justification = c(1, 1)) +
-  facet_grid(.~GENDER, labeller = label_both) +
-  geom_line(data = data1 %>% group_by(TIME) %>%
-              summarize(meanCONC = mean(COBS)), 
-            aes(x = TIME, y = meanCONC, group = NULL), size = 1.25, color = "red")
-```
-
-8) add two mean profiles (one for each gender)
-
-```{r}
-data1 %>% 
-   ggplot(aes(x = TIME, y = COBS, group = ID)) +
-  geom_point(size = 2.5) + geom_line(size = 1.1) +
-  scale_y_log10() +
-    theme(legend.position = c(1, 1), legend.justification = c(1, 1)) +
-  facet_grid(.~GENDER, labeller = label_both) +
-  geom_line(data = data1 %>% 
-              group_by(TIME, GENDER) %>%
-              summarize(meanCONC = mean(COBS)), 
-            aes(x = TIME, 
-                y = meanCONC, 
-                group = GENDER, 
-                color = GENDER), 
-            size = 1.25) + 
-    scale_color_discrete(name = "Mean Profile", labels = c("Male", "Female"))
 ```
 
 9) color by weight
@@ -156,59 +125,36 @@ data1 %>%
    ggplot(aes(x = TIME, y = COBS, group = ID, color = WEIGHT)) +
   geom_point(size = 2.5) + geom_line(size = 1.1) +
   scale_y_log10() +
-    theme(legend.position = c(1, 1), legend.justification = c(1, 1)) +
-  xlab("Time, hours") + ylab("Concentration, ug/mL")
-# alternative to xlab/ylab is declare all at once
-# labs(list(x = "Time, hours", y = "Concentration, ug/mL"))
+    theme(legend.position = c(1, 1), 
+          legend.justification = c(1, 1)) +
+  labs(x = "Time, hours", y = "Concentration, ug/mL")
 ```
 
-BONUS: additional customizations
-
-```{r}
-data1 %>% 
-   ggplot(aes(x = TIME, y = COBS, group = ID, color = WEIGHT)) +
-  geom_point(size = 2.5) + geom_line(size = 1.1) +
-  scale_y_log10() +
-    theme(legend.position = c(1, 1), legend.justification = c(1, 1)) +
-  xlab("Time, hours") + ylab("Concentration, ug/mL") +
-  # all these theme customizations are defined in PKPDmisc::base_theme()
-  # however I wanted to show what the individual customizations looked like
-  # so you can play around and test various
-theme(legend.text = element_text(size = 10),
-     legend.title = element_text(size = 12),
-     axis.title.x = element_text(size = 12, face = "bold"),
-     axis.title.y = element_text(size = 12, face = "bold"),
-     axis.text.x = element_text(color = "black", size = 10),
-     axis.text.y = element_text(color = "black", size = 10))
-```
 
 ## Boxplots and Histograms
+
 * Histogram(s) of demographics
+
 ```{r}
-sid_data <- data1 %>% distinct(ID, .keep_all = TRUE) # single row per id data
+# distinct is a dplyr verb - easiest way to subset data by the 
+# first row in some combination.
+sid_data <- data1 %>% 
+    distinct(ID, .keep_all = TRUE) # single row per id data
 
 sid_data %>%
 ggplot(aes(x = WEIGHT)) + 
   geom_histogram(binwidth= 4, color="black", fill="white")
 ```
 
-  * add vertical line for median value
+* add vertical line for median value
+  
 ```{r}
- median <- sid_data %>% summarize(medianWT = median(WEIGHT))
- # alternative explicit declaration of data inside ggplot rather than outside using %>%
 ggplot(data = sid_data, 
        aes(x = WEIGHT)) + 
   geom_histogram(binwidth= 4, color="black", fill="white") +
-  geom_vline(xintercept = median[["medianWT"]], size= 2, color = "red")
+  geom_vline(aes(xintercept = median(WT)), size= 2, color = "red")
 ```
 
-* Boxplot cmax/AUC by gender
-```{r}
-cmaxauc <- data1 %>% group_by(ID, GENDER) %>% 
-    summarize(cmax = max(COBS), aucinf = auc_inf(TIME, COBS))
-ggplot(cmaxauc, aes(x = GENDER, y = cmax, group = GENDER)) + geom_boxplot()
-ggplot(cmaxauc, aes(x = GENDER, y = aucinf, group = GENDER)) + geom_boxplot()
-```
 
 ```{r}
 devtools::session_info()
