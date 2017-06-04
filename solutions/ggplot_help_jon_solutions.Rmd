@@ -5,17 +5,11 @@ Help! Your colleague Jon has come to you for help. He is just starting to use gg
 
 Jon has been kind enough to provide you with a zipped R project. You can unzip the project and click on the .Rproj to open up the project to get you started. 
 
-```{r setup, include=F, eval=F}
-setwd(paste0(getwd(), "/lab-notebook"))
-```
-
 ```{r libraries}
-library("dplyr")
-library("ggplot2")
-library("knitr")
-library("PKPDdatasets")
-library("PKPDmisc")
-               
+library(tidyverse)
+library(knitr)
+library(PKPDdatasets)
+library(PKPDmisc) 
 opts_chunk$set(cache=T, fig.width=9)
 ```
 
