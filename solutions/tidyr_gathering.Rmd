@@ -10,7 +10,7 @@ library(tidyverse)
 ```
 
 ```{r}
-eta_cov <- read.csv("../data/ebe_cov.csv")
+eta_cov <- read.csv("../data/ebe_cov_full.csv")
 
 ```
 
