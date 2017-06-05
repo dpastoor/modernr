@@ -6,9 +6,11 @@ rmd_files: [
   "data-manip1.Rmd",
   "ggplot_help_jon_solutions.Rmd",
   "tidying_data.Rmd",
+  "diagnostic-plots.Rmd",
+  "Legacy.Rmd",
   "tidyr_gathering.Rmd",
   "data-manip1_legacy.Rmd",
-  "NSE_legacy.Rmd"
+  "NSE_legacy.Rmd",
   "diagnostic-plots_legacy.Rmd",
 ]
 output_dir: "../docs"

@@ -1,4 +1,4 @@
-# Nonstandard evaluation
+## Nonstandard evaluation
 
 ```{r}
 library(lazyeval)

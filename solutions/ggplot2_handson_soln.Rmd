@@ -152,7 +152,7 @@ ggplot(aes(x = WEIGHT)) +
 ggplot(data = sid_data, 
        aes(x = WEIGHT)) + 
   geom_histogram(binwidth= 4, color="black", fill="white") +
-  geom_vline(aes(xintercept = median(WT)), size= 2, color = "red")
+  geom_vline(aes(xintercept = median(WEIGHT)), size= 2, color = "red")
 ```
 
 

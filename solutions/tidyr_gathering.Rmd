@@ -1,4 +1,4 @@
-# Tidyr 
+## Tidyr legacy
 
 
 ```{r}
@@ -61,7 +61,7 @@ lapply(paste0("ETA", 1:4), function(eta, g_eta_cov) {
 
 ```
 
-## Double stack
+### Double stack
 
 We can actually gather again
 ```{r}

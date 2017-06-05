@@ -1,11 +1,4 @@
----
-title: "data manipulation hands-on"
-author: "Devin"
-date: "`r Sys.Date()`"
-output:
-  pdf_document: default
-  word_document: default
----
+# Data manipulation
 
 ```{r}
 library(knitr)
@@ -44,7 +37,7 @@ pk_data_cobs <- pk_data %>% rename(COBS = DV)
 ```
 
 
-4. Perform the following tasks:
+2. Perform the following tasks:
 
 a. Ensure that the following columns are numeric and not text: TIME, COBS, WT, AGE, AMT and DOSEs
     
@@ -62,7 +55,8 @@ b. Create a new column called BQLFLAG which takes a value of
     
 ```{r}
 pk_data_cobs <- pk_data_cobs %>% 
-  mutate(BQLFLAG = ifelse(COBS == "BQL", 1, 0),
+  mutate(BQLFLAG = ifelse(is.na(COBS), 0, 
+                          ifelse(COBS == "BQL", 1, 0)),
         NONNUMERICS = ifelse(COBS %in% unique_non_numerics(COBS), 1, 0),
         COBS = as_numeric(COBS))
 ```
@@ -99,7 +93,8 @@ g. Remove the following columns
     ii. RACE
    
 ```{r}
-pk_data_output <- pk_data_cobs %>% select(-SEX, -RACE)
+pk_data_output <- pk_data_cobs %>% 
+    select(-SEX, -RACE)
 ```
 
 ```{r}

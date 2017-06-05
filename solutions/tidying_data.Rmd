@@ -1,18 +1,10 @@
----
-title: "data manipulation hands-on"
-author: "Devin"
-date: "`r Sys.Date()`"
-output:
-  pdf_document: default
----
+# Tidying Data
 
 ```{r}
 library(knitr)
 library(tidyverse)
 library(PKPDmisc)
 ```
-
-## DATA IMPORT
 
 ```{r}
 ebe_cov <- read_csv("../data/ebe_cov.csv")
