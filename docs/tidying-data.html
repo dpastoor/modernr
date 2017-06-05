@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Modern R Solutions</title>
+  <meta name="description" content="solutions to the modern R exercises">
+  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Modern R Solutions" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="solutions to the modern R exercises" />
+  <meta name="github-repo" content="dpastoor/modernr" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Modern R Solutions" />
+  <meta name="twitter:site" content="@devinpastoor" />
+  <meta name="twitter:description" content="solutions to the modern R exercises" />
+  
+
+<meta name="author" content="Devin Pastoor">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="advanced-ggplot-customizations.html">
+<link rel="next" href="diagnostic-plots.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="modernr.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><strong><a href="./"> Modern R Solutions </a></strong></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Current</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html"><i class="fa fa-check"></i><b>1</b> Introduction to ggplot2</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#xy-plots"><i class="fa fa-check"></i><b>1.1</b> XY Plots</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#boxplots-and-histograms"><i class="fa fa-check"></i><b>1.2</b> Boxplots and Histograms</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>2</b> Data manipulation</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-manipulation.html"><a href="data-manipulation.html#data-import"><i class="fa fa-check"></i><b>2.1</b> DATA IMPORT</a></li>
+<li class="chapter" data-level="2.2" data-path="data-manipulation.html"><a href="data-manipulation.html#data-manipulation-1"><i class="fa fa-check"></i><b>2.2</b> DATA MANIPULATION</a></li>
+<li class="chapter" data-level="2.3" data-path="data-manipulation.html"><a href="data-manipulation.html#descriptive-statistics"><i class="fa fa-check"></i><b>2.3</b> Descriptive Statistics</a></li>
+<li class="chapter" data-level="2.4" data-path="data-manipulation.html"><a href="data-manipulation.html#average_obs"><i class="fa fa-check"></i><b>2.4</b> average_obs</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html"><i class="fa fa-check"></i><b>3</b> advanced ggplot customizations</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#to-get-a-final-plot-that-looks-like-this"><i class="fa fa-check"></i><b>3.0.1</b> to get a final plot that looks like this:</a></li>
+<li class="chapter" data-level="3.0.2" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-will-look-like-this"><i class="fa fa-check"></i><b>3.0.2</b> so it will look like this:</a></li>
+<li class="chapter" data-level="3.0.3" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this"><i class="fa fa-check"></i><b>3.0.3</b> so it looks like this:</a></li>
+<li class="chapter" data-level="3.0.4" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this-1"><i class="fa fa-check"></i><b>3.0.4</b> So it looks like this:</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tidying-data.html"><a href="tidying-data.html"><i class="fa fa-check"></i><b>4</b> Tidying Data</a><ul>
+<li class="chapter" data-level="4.1" data-path="tidying-data.html"><a href="tidying-data.html#data-checkout-for-all-covariates"><i class="fa fa-check"></i><b>4.1</b> data checkout for all covariates</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="diagnostic-plots.html"><a href="diagnostic-plots.html"><i class="fa fa-check"></i><b>5</b> Diagnostic Plots</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="diagnostic-plots.html"><a href="diagnostic-plots.html#cwres-vs-time-after-dose-tad"><i class="fa fa-check"></i><b>5.0.1</b> CWRES vs time after dose (TAD)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="legacy.html"><a href="legacy.html"><i class="fa fa-check"></i><b>6</b> Legacy</a><ul>
+<li class="chapter" data-level="6.1" data-path="legacy.html"><a href="legacy.html#tidyr-legacy"><i class="fa fa-check"></i><b>6.1</b> Tidyr legacy</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="legacy.html"><a href="legacy.html#single-plot-example"><i class="fa fa-check"></i><b>6.1.1</b> Single plot example</a></li>
+<li class="chapter" data-level="6.1.2" data-path="legacy.html"><a href="legacy.html#iterate-through-multiple-eta-values"><i class="fa fa-check"></i><b>6.1.2</b> Iterate through multiple ETA values</a></li>
+<li class="chapter" data-level="6.1.3" data-path="legacy.html"><a href="legacy.html#double-stack"><i class="fa fa-check"></i><b>6.1.3</b> Double stack</a></li>
+<li class="chapter" data-level="6.1.4" data-path="legacy.html"><a href="legacy.html#plot-all-releationships"><i class="fa fa-check"></i><b>6.1.4</b> plot all releationships</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="legacy.html"><a href="legacy.html#dplyr-data-manipulation"><i class="fa fa-check"></i><b>6.2</b> dplyr data manipulation</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="legacy.html"><a href="legacy.html#task-i"><i class="fa fa-check"></i><b>6.2.1</b> Task-I</a></li>
+<li class="chapter" data-level="6.2.2" data-path="legacy.html"><a href="legacy.html#task-ii"><i class="fa fa-check"></i><b>6.2.2</b> Task-II</a></li>
+<li class="chapter" data-level="6.2.3" data-path="legacy.html"><a href="legacy.html#summary-statistics"><i class="fa fa-check"></i><b>6.2.3</b> Summary Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="legacy.html"><a href="legacy.html#nonstandard-evaluation"><i class="fa fa-check"></i><b>6.3</b> Nonstandard evaluation</a></li>
+<li class="chapter" data-level="6.4" data-path="legacy.html"><a href="legacy.html#diagnostic-plots-1"><i class="fa fa-check"></i><b>6.4</b> Diagnostic Plots</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modern R Solutions</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tidying-data" class="section level1">
+<h1><span class="header-section-number">4</span> Tidying Data</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(knitr)
+<span class="kw">library</span>(tidyverse)
+<span class="co">#&gt; Loading tidyverse: ggplot2</span>
+<span class="co">#&gt; Loading tidyverse: tibble</span>
+<span class="co">#&gt; Loading tidyverse: tidyr</span>
+<span class="co">#&gt; Loading tidyverse: readr</span>
+<span class="co">#&gt; Loading tidyverse: purrr</span>
+<span class="co">#&gt; Loading tidyverse: dplyr</span>
+<span class="co">#&gt; Conflicts with tidy packages ----------------------------------------------</span>
+<span class="co">#&gt; filter(): dplyr, stats</span>
+<span class="co">#&gt; lag():    dplyr, stats</span>
+<span class="kw">library</span>(PKPDmisc)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ebe_cov &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;../data/ebe_cov.csv&quot;</span>)
+<span class="co">#&gt; Parsed with column specification:</span>
+<span class="co">#&gt; cols(</span>
+<span class="co">#&gt;   ID = col_integer(),</span>
+<span class="co">#&gt;   ETA1 = col_double(),</span>
+<span class="co">#&gt;   ETA2 = col_double(),</span>
+<span class="co">#&gt;   ETA3 = col_integer(),</span>
+<span class="co">#&gt;   ETA4 = col_double(),</span>
+<span class="co">#&gt;   ETA5 = col_double(),</span>
+<span class="co">#&gt;   ETA6 = col_double(),</span>
+<span class="co">#&gt;   ETA7 = col_double(),</span>
+<span class="co">#&gt;   ETA8 = col_double(),</span>
+<span class="co">#&gt;   ETA9 = col_double(),</span>
+<span class="co">#&gt;   BW = col_double(),</span>
+<span class="co">#&gt;   BMI = col_double(),</span>
+<span class="co">#&gt;   AGE = col_integer(),</span>
+<span class="co">#&gt;   AST = col_integer(),</span>
+<span class="co">#&gt;   ALT = col_integer(),</span>
+<span class="co">#&gt;   CRCL = col_double(),</span>
+<span class="co">#&gt;   SEX = col_integer(),</span>
+<span class="co">#&gt;   RACE = col_integer()</span>
+<span class="co">#&gt; )</span></code></pre></div>
+<p>Remove all the columns with ETAS and name dataframe <code>covs</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">covs &lt;-<span class="st"> </span>ebe_cov <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">contains</span>(<span class="st">&quot;ETA&quot;</span>))</code></pre></div>
+<p>Find all columns with an NA value, and the associated ID</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">has_missing &lt;-<span class="st"> </span>covs <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(ID) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select_if</span>(<span class="op">~</span><span class="kw">any</span>(<span class="kw">is.na</span>(.))) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ungroup</span>()
+<span class="kw">head</span>(has_missing)
+<span class="co">#&gt; # A tibble: 6 x 3</span>
+<span class="co">#&gt;      ID    BW   SEX</span>
+<span class="co">#&gt;   &lt;int&gt; &lt;dbl&gt; &lt;int&gt;</span>
+<span class="co">#&gt; 1     1 109.4     1</span>
+<span class="co">#&gt; 2     4 120.2     0</span>
+<span class="co">#&gt; 3     5  83.0     0</span>
+<span class="co">#&gt; 4     6  64.2     0</span>
+<span class="co">#&gt; 5     7  74.4     0</span>
+<span class="co">#&gt; 6     8  68.4     0</span>
+
+missing_ids &lt;-<span class="st"> </span>has_missing <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">gather</span>(cov, values, <span class="op">-</span>ID) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(<span class="kw">is.na</span>(values))
+missing_ids
+<span class="co">#&gt; # A tibble: 2 x 3</span>
+<span class="co">#&gt;      ID   cov values</span>
+<span class="co">#&gt;   &lt;int&gt; &lt;chr&gt;  &lt;dbl&gt;</span>
+<span class="co">#&gt; 1    69    BW     NA</span>
+<span class="co">#&gt; 2    65   SEX     NA</span></code></pre></div>
+<p>Impute the NA values using the mean for any continous variable, and largest group for categorical</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">has_missing <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>ID) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">SEX =</span> <span class="kw">as.factor</span>(SEX)) <span class="op">%&gt;%</span><span class="st"> </span>summary
+<span class="co">#&gt;        BW          SEX    </span>
+<span class="co">#&gt;  Min.   : 51.7   0   :48  </span>
+<span class="co">#&gt;  1st Qu.: 75.2   1   :12  </span>
+<span class="co">#&gt;  Median : 88.1   NA&#39;s: 1  </span>
+<span class="co">#&gt;  Mean   : 90.3            </span>
+<span class="co">#&gt;  3rd Qu.:103.6            </span>
+<span class="co">#&gt;  Max.   :159.2            </span>
+<span class="co">#&gt;  NA&#39;s   :1</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">replacement_values &lt;-<span class="st"> </span>has_missing <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">BW =</span> <span class="kw">mean</span>(BW, <span class="dt">na.rm =</span> T)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">SEX =</span> <span class="dv">0</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">covs &lt;-<span class="st"> </span>covs <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">replace_na</span>(<span class="dt">replace =</span> <span class="kw">as.list</span>(replacement_values)) </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">covs <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(ID <span class="op">%in%</span><span class="st"> </span>missing_ids<span class="op">$</span>ID)
+<span class="co">#&gt; # A tibble: 2 x 9</span>
+<span class="co">#&gt;      ID    BW   BMI   AGE   AST   ALT  CRCL   SEX  RACE</span>
+<span class="co">#&gt;   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;</span>
+<span class="co">#&gt; 1    65  97.5  32.7    47    18    23   116     0     0</span>
+<span class="co">#&gt; 2    69  90.3  27.5    39    32    53   161     0     1</span></code></pre></div>
+<div id="data-checkout-for-all-covariates" class="section level2">
+<h2><span class="header-section-number">4.1</span> data checkout for all covariates</h2>
+<p>Set all categorical covariates to factors with appropriate labels</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">covs_f &lt;-<span class="st"> </span>covs <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">SEXC =</span> <span class="kw">factor</span>(SEX, 
+                       <span class="dt">levels =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), 
+                       <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;FEMALE&quot;</span>, <span class="st">&quot;MALE&quot;</span>)
+                       ),
+        <span class="dt">RACEC =</span> <span class="kw">factor</span>(RACE, 
+                       <span class="dt">levels =</span> <span class="kw">c</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">2</span>), 
+                       <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;WHITE&quot;</span>, <span class="st">&quot;BLACK&quot;</span>, <span class="st">&quot;ASIAN&quot;</span>)
+                       )
+         ) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>SEX, <span class="op">-</span>RACE)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g_cont_covs &lt;-<span class="st"> </span>covs_f <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">gather</span>(cov, value, BW<span class="op">:</span>CRCL)</code></pre></div>
+<p>Plot a scatter plot of all continuous covariates versus ID to check for visual outliers</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g_cont_covs <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ID, <span class="dt">y =</span> value)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>cov, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>)</code></pre></div>
+<p><img src="tidying_data_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Plot a violin/box plot of all continuous covariates versus SEX to check for visual trends</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g_cont_covs <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> SEXC, <span class="dt">y =</span> value)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_violin</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">width =</span> <span class="fl">0.1</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>cov, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>)</code></pre></div>
+<p><img src="tidying_data_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Plot a violin/box plot of all continuous covariates versus all categorical covariates to check for visual trends</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g_cont_covs <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">gather</span>(catcov, catvals, RACEC, SEXC) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> catvals, <span class="dt">y =</span> value)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_violin</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">width =</span> <span class="fl">0.1</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_grid</span>(cov<span class="op">~</span>catcov, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>)
+<span class="co">#&gt; Warning: attributes are not identical across measure variables; they will</span>
+<span class="co">#&gt; be dropped</span></code></pre></div>
+<p><img src="tidying_data_files/figure-html/unnamed-chunk-14-1.png" width="768" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">session_info</span>()
+<span class="co">#&gt; Session info -------------------------------------------------------------</span>
+<span class="co">#&gt;  setting  value                       </span>
+<span class="co">#&gt;  version  R version 3.4.0 (2017-04-21)</span>
+<span class="co">#&gt;  system   x86_64, mingw32             </span>
+<span class="co">#&gt;  ui       RTerm                       </span>
+<span class="co">#&gt;  language (EN)                        </span>
+<span class="co">#&gt;  collate  English_United States.1252  </span>
+<span class="co">#&gt;  tz       Europe/Prague               </span>
+<span class="co">#&gt;  date     2017-06-05</span>
+<span class="co">#&gt; Packages -----------------------------------------------------------------</span>
+<span class="co">#&gt;  package    * version  date       source                            </span>
+<span class="co">#&gt;  assertthat   0.2.0    2017-04-11 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  backports    1.1.0    2017-05-22 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  base       * 3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  bindr        0.1      2016-11-13 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  bindrcpp   * 0.1      2016-12-11 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  bookdown     0.4      2017-05-20 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  broom        0.4.2    2017-02-13 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  cellranger   1.1.0    2016-07-27 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  codetools    0.2-15   2016-10-05 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  colorspace   1.3-2    2016-12-14 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  compiler     3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  datasets   * 3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  devtools     1.13.1   2017-05-13 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  digest       0.6.12   2017-01-27 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  dplyr      * 0.6.0    2017-06-02 Github (tidyverse/dplyr@b064c4b)  </span>
+<span class="co">#&gt;  evaluate     0.10     2016-10-11 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  forcats      0.2.0    2017-01-23 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  foreign      0.8-67   2016-09-13 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  ggplot2    * 2.2.1    2016-12-30 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  glue         1.0.0    2017-04-17 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  graphics   * 3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  grDevices  * 3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  grid         3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  gtable       0.2.0    2016-02-26 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  haven        1.0.0    2016-09-23 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  hms          0.3      2016-11-22 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  htmltools    0.3.6    2017-04-28 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  httr         1.2.1    2016-07-03 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  jsonlite     1.5      2017-06-01 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  knitr      * 1.16     2017-05-18 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  labeling     0.3      2014-08-23 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  lattice      0.20-35  2017-03-25 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  lazyeval     0.2.0    2016-06-12 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  lubridate    1.6.0    2016-09-13 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  magrittr     1.5      2014-11-22 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  memoise      1.1.0    2017-04-21 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  methods      3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  mnormt       1.5-5    2016-10-15 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  modelr       0.1.0    2016-08-31 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  munsell      0.4.3    2016-02-13 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  nlme         3.1-131  2017-02-06 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  parallel     3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  PKPDmisc   * 1.0.0    2017-06-02 Github (dpastoor/PKPDmisc@23e1f49)</span>
+<span class="co">#&gt;  plyr         1.8.4    2016-06-08 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  psych        1.7.5    2017-05-03 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  purrr      * 0.2.2.2  2017-05-11 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  R6           2.2.1    2017-05-10 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  Rcpp         0.12.11  2017-05-22 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  readr      * 1.1.1    2017-05-16 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  readxl       1.0.0    2017-04-18 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  reshape2     1.4.2    2016-10-22 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  rlang        0.1.1    2017-05-18 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  rmarkdown    1.5.9000 2017-06-03 Github (rstudio/rmarkdown@ea515ef)</span>
+<span class="co">#&gt;  rprojroot    1.2      2017-01-16 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  rvest        0.3.2    2016-06-17 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  scales       0.4.1    2016-11-09 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  stats      * 3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  stringi      1.1.5    2017-04-07 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  stringr      1.2.0    2017-02-18 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  tibble     * 1.3.3    2017-05-28 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  tidyr      * 0.6.3    2017-05-15 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  tidyverse  * 1.1.1    2017-01-27 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  tools        3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  utils      * 3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  withr        1.0.2    2016-06-20 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  xml2         1.1.1    2017-01-24 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  yaml         2.1.14   2016-11-12 CRAN (R 3.4.0)</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="advanced-ggplot-customizations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="diagnostic-plots.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/dpastoor/modernr/edit/master/tidying_data.Rmd",
+"text": "Edit"
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

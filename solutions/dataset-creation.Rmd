@@ -1,0 +1,47 @@
+# Dataset Creation
+
+```{r}
+library(tidyverse)
+library(PKPDmisc)
+```
+
+Messy data
+
+```{r}
+id_site <- expand.grid(
+    ID = paste0("ID", pad_left(1:5, 3)), 
+    SITE = c("S001", "S002", "S003"),
+    TIME = c(0, 0.5, 1, 2, 4)
+    ) %>%
+    as_data_frame() %>% arrange(SITE, ID, TIME)
+```
+
+```{r}
+treplace <- function(x) {
+    case_when(
+        x == 0 ~ "0.0",
+        x == 0.5 ~ "30 min",
+        TRUE ~ paste(x, "hrs")
+    ) 
+}
+
+dirty_data <- id_site %>%
+    mutate(TIME = treplace(TIME),
+           DV = round(runif(n(), 10, 20), 1)) %>%
+    unite(IDS, ID, SITE) %>%
+    spread(TIME, DV) %>%
+    select(IDS, `0.0`, `30 min`, everything())
+```
+
+```{r}
+head(dirty_data)
+```
+
+```{r}
+write_csv(dirty_data, "../data/dirty_data.csv")
+```
+
+```{r}
+devtools::session_info()
+```
+
