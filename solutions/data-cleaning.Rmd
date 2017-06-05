@@ -1,0 +1,47 @@
+# Data cleaning
+
+```{r}
+library(tidyverse)
+library(stringr)
+library(PKPDmisc)
+```
+
+```{r}
+dirty_data <- read_csv("../data/dirty_data.csv")
+```
+Reformat the data to be a tidy dataset - 'long' instead of wide,
+with time a numeric column of hours. Likewise, split up IDS into two
+columns, ID and SITE, where ID is just the numeric ID (eg ID001 --> 1)
+
+```{r}
+g_data <- dirty_data %>% gather(TIME, DV, -IDS) %>%
+    arrange(IDS) %>%
+    mutate(TIME = ifelse(TIME == "30 min", 0.5, TIME),
+           TIME = str_replace(TIME, "hrs", ""),
+           TIME = as_numeric(TIME)) %>%
+    separate(IDS, c("ID", "Site"), "_") %>%
+    mutate(ID = as_numeric(str_extract(ID, "\\d+"))) 
+
+g_data %>% 
+    head(n = 10)
+```
+
+Calculate percent change from baseline for each ID at each site
+
+```{r}
+g_data <- g_data %>%
+    group_by(ID, Site) %>%
+    mutate(pCFB = round(100*(DV-first(DV))/first(DV), 2))
+
+head(g_data)
+```
+
+Which individual(s) had the largest positive and negative percent change from baseline?
+
+```{r}
+g_data %>% 
+    ungroup %>% 
+    filter(pCFB == max(pCFB) | pCFB == min(pCFB)) %>%
+    pull(ID) %>% unique
+```
+
