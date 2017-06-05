@@ -6,9 +6,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Modern R Solutions</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="solutions to the modern R exercises">
-  <meta name="generator" content="bookdown 0.2 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
 
   <meta property="og:title" content="Modern R Solutions" />
   <meta property="og:type" content="book" />
@@ -32,9 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="diagnostic-plots.html">
-<link rel="next" href="tidyr.html">
-
+<link rel="prev" href="data-manipulation.html">
+<link rel="next" href="tidying-data.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -94,6 +92,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 
 
+
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
@@ -103,35 +102,44 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><strong><a href="./"> Modern R Solutions </a></strong></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
-<li class="chapter" data-level="1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html"><i class="fa fa-check"></i><b>1</b> dplyr data manipulation</a><ul>
-<li class="chapter" data-level="1.0.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#task-i"><i class="fa fa-check"></i><b>1.0.1</b> Task-I</a></li>
-<li class="chapter" data-level="1.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#data-manipulation"><i class="fa fa-check"></i><b>1.1</b> DATA MANIPULATION</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#task-ii"><i class="fa fa-check"></i><b>1.1.1</b> Task-II</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Current</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html"><i class="fa fa-check"></i><b>1</b> Introduction to ggplot2</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#xy-plots"><i class="fa fa-check"></i><b>1.1</b> XY Plots</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#boxplots-and-histograms"><i class="fa fa-check"></i><b>1.2</b> Boxplots and Histograms</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#descriptive-statistics"><i class="fa fa-check"></i><b>1.2</b> Descriptive Statistics</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#task-iii"><i class="fa fa-check"></i><b>1.2.1</b> Task III</a></li>
+<li class="chapter" data-level="2" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>2</b> Data manipulation</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-manipulation.html"><a href="data-manipulation.html#data-import"><i class="fa fa-check"></i><b>2.1</b> DATA IMPORT</a></li>
+<li class="chapter" data-level="2.2" data-path="data-manipulation.html"><a href="data-manipulation.html#data-manipulation-1"><i class="fa fa-check"></i><b>2.2</b> DATA MANIPULATION</a></li>
+<li class="chapter" data-level="2.3" data-path="data-manipulation.html"><a href="data-manipulation.html#descriptive-statistics"><i class="fa fa-check"></i><b>2.3</b> Descriptive Statistics</a></li>
+<li class="chapter" data-level="2.4" data-path="data-manipulation.html"><a href="data-manipulation.html#average_obs"><i class="fa fa-check"></i><b>2.4</b> average_obs</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html"><i class="fa fa-check"></i><b>3</b> advanced ggplot customizations</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#to-get-a-final-plot-that-looks-like-this"><i class="fa fa-check"></i><b>3.0.1</b> to get a final plot that looks like this:</a></li>
+<li class="chapter" data-level="3.0.2" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-will-look-like-this"><i class="fa fa-check"></i><b>3.0.2</b> so it will look like this:</a></li>
+<li class="chapter" data-level="3.0.3" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this"><i class="fa fa-check"></i><b>3.0.3</b> so it looks like this:</a></li>
+<li class="chapter" data-level="3.0.4" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this-1"><i class="fa fa-check"></i><b>3.0.4</b> So it looks like this:</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html"><i class="fa fa-check"></i><b>2</b> Introduction to ggplot2</a><ul>
-<li class="chapter" data-level="2.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#xy-plots"><i class="fa fa-check"></i><b>2.1</b> XY Plots</a></li>
-<li class="chapter" data-level="2.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#boxplots-and-histograms"><i class="fa fa-check"></i><b>2.2</b> Boxplots and Histograms</a></li>
+<li class="chapter" data-level="4" data-path="tidying-data.html"><a href="tidying-data.html"><i class="fa fa-check"></i><b>4</b> Tidying Data</a><ul>
+<li class="chapter" data-level="4.1" data-path="tidying-data.html"><a href="tidying-data.html#data-checkout-for-all-covariates"><i class="fa fa-check"></i><b>4.1</b> data checkout for all covariates</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="diagnostic-plots.html"><a href="diagnostic-plots.html"><i class="fa fa-check"></i><b>3</b> Diagnostic Plots</a></li>
-<li class="chapter" data-level="4" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html"><i class="fa fa-check"></i><b>4</b> advanced ggplot customizations</a><ul>
-<li class="chapter" data-level="4.0.1" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#to-get-a-final-plot-that-looks-like-this"><i class="fa fa-check"></i><b>4.0.1</b> to get a final plot that looks like this:</a></li>
-<li class="chapter" data-level="4.0.2" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-will-look-like-this"><i class="fa fa-check"></i><b>4.0.2</b> so it will look like this:</a></li>
-<li class="chapter" data-level="4.0.3" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this"><i class="fa fa-check"></i><b>4.0.3</b> so it looks like this:</a></li>
-<li class="chapter" data-level="4.0.4" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this-1"><i class="fa fa-check"></i><b>4.0.4</b> So it looks like this:</a></li>
+<li class="chapter" data-level="5" data-path="diagnostic-plots.html"><a href="diagnostic-plots.html"><i class="fa fa-check"></i><b>5</b> Diagnostic Plots</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="diagnostic-plots.html"><a href="diagnostic-plots.html#cwres-vs-time-after-dose-tad"><i class="fa fa-check"></i><b>5.0.1</b> CWRES vs time after dose (TAD)</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="tidyr.html"><a href="tidyr.html"><i class="fa fa-check"></i><b>5</b> Tidyr</a><ul>
-<li class="chapter" data-level="5.0.1" data-path="tidyr.html"><a href="tidyr.html#single-plot-example"><i class="fa fa-check"></i><b>5.0.1</b> Single plot example</a></li>
-<li class="chapter" data-level="5.0.2" data-path="tidyr.html"><a href="tidyr.html#iterate-through-multiple-eta-values"><i class="fa fa-check"></i><b>5.0.2</b> Iterate through multiple ETA values</a></li>
-<li class="chapter" data-level="5.1" data-path="tidyr.html"><a href="tidyr.html#double-stack"><i class="fa fa-check"></i><b>5.1</b> Double stack</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="tidyr.html"><a href="tidyr.html#plot-all-releationships"><i class="fa fa-check"></i><b>5.1.1</b> plot all releationships</a></li>
+<li class="chapter" data-level="6" data-path="legacy.html"><a href="legacy.html"><i class="fa fa-check"></i><b>6</b> Legacy</a><ul>
+<li class="chapter" data-level="6.1" data-path="legacy.html"><a href="legacy.html#tidyr-legacy"><i class="fa fa-check"></i><b>6.1</b> Tidyr legacy</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="legacy.html"><a href="legacy.html#single-plot-example"><i class="fa fa-check"></i><b>6.1.1</b> Single plot example</a></li>
+<li class="chapter" data-level="6.1.2" data-path="legacy.html"><a href="legacy.html#iterate-through-multiple-eta-values"><i class="fa fa-check"></i><b>6.1.2</b> Iterate through multiple ETA values</a></li>
+<li class="chapter" data-level="6.1.3" data-path="legacy.html"><a href="legacy.html#double-stack"><i class="fa fa-check"></i><b>6.1.3</b> Double stack</a></li>
+<li class="chapter" data-level="6.1.4" data-path="legacy.html"><a href="legacy.html#plot-all-releationships"><i class="fa fa-check"></i><b>6.1.4</b> plot all releationships</a></li>
 </ul></li>
+<li class="chapter" data-level="6.2" data-path="legacy.html"><a href="legacy.html#dplyr-data-manipulation"><i class="fa fa-check"></i><b>6.2</b> dplyr data manipulation</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="legacy.html"><a href="legacy.html#task-i"><i class="fa fa-check"></i><b>6.2.1</b> Task-I</a></li>
+<li class="chapter" data-level="6.2.2" data-path="legacy.html"><a href="legacy.html#task-ii"><i class="fa fa-check"></i><b>6.2.2</b> Task-II</a></li>
+<li class="chapter" data-level="6.2.3" data-path="legacy.html"><a href="legacy.html#summary-statistics"><i class="fa fa-check"></i><b>6.2.3</b> Summary Statistics</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="nonstandard-evaluation.html"><a href="nonstandard-evaluation.html"><i class="fa fa-check"></i><b>6</b> Nonstandard evaluation</a></li>
+<li class="chapter" data-level="6.3" data-path="legacy.html"><a href="legacy.html#nonstandard-evaluation"><i class="fa fa-check"></i><b>6.3</b> Nonstandard evaluation</a></li>
+<li class="chapter" data-level="6.4" data-path="legacy.html"><a href="legacy.html#diagnostic-plots-1"><i class="fa fa-check"></i><b>6.4</b> Diagnostic Plots</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -150,27 +158,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="advanced-ggplot-customizations" class="section level1">
-<h1><span class="header-section-number">4</span> advanced ggplot customizations</h1>
+<h1><span class="header-section-number">3</span> advanced ggplot customizations</h1>
 <p>Help! Your colleague Jon has come to you for help. He is just starting to use ggplot and is having trouble. Thankfully, he has gotten started on making the necessary plots, and has a good idea what he wants. Your job, should you choose to accept it, is to help finish off the plots Jon has started.</p>
 <p>Jon has been kind enough to provide you with a zipped R project. You can unzip the project and click on the .Rproj to open up the project to get you started.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: &#39;dplyr&#39;</span>
-<span class="co">#&gt; The following objects are masked from &#39;package:stats&#39;:</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     filter, lag</span>
-<span class="co">#&gt; The following objects are masked from &#39;package:base&#39;:</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     intersect, setdiff, setequal, union</span>
-<span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>)
-<span class="kw">library</span>(<span class="st">&quot;knitr&quot;</span>)
-<span class="kw">library</span>(<span class="st">&quot;PKPDdatasets&quot;</span>)
-<span class="kw">library</span>(<span class="st">&quot;PKPDmisc&quot;</span>)
-               
-opts_chunk$<span class="kw">set</span>(<span class="dt">cache=</span>T, <span class="dt">fig.width=</span><span class="dv">9</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse, <span class="dt">warn.conflicts =</span> <span class="ot">FALSE</span>)
+<span class="co">#&gt; Loading tidyverse: ggplot2</span>
+<span class="co">#&gt; Loading tidyverse: tibble</span>
+<span class="co">#&gt; Loading tidyverse: tidyr</span>
+<span class="co">#&gt; Loading tidyverse: readr</span>
+<span class="co">#&gt; Loading tidyverse: purrr</span>
+<span class="co">#&gt; Loading tidyverse: dplyr</span>
+<span class="co">#&gt; Conflicts with tidy packages ----------------------------------------------</span>
+<span class="co">#&gt; filter(): dplyr, stats</span>
+<span class="co">#&gt; lag():    dplyr, stats</span>
+<span class="kw">library</span>(knitr)
+<span class="kw">library</span>(PKPDdatasets)
+<span class="kw">library</span>(PKPDmisc) 
+opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">cache=</span>T, <span class="dt">fig.width=</span><span class="dv">9</span>)</code></pre></div>
 <p>The data Jon is working with conventiently comes from the <code>dapa_iv_oral</code> dataset in the <code>PKPDdatasets</code> package.</p>
 <p>Jon’s first attempt to make a concentration time plot for each ID looks funny.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">oral_data &lt;-<span class="st"> </span>dapa_IV_oral %&gt;%<span class="st"> </span><span class="kw">filter</span>(FORMULATION ==<span class="st"> &quot;ORAL&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">oral_data &lt;-<span class="st"> </span>dapa_IV_oral <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(FORMULATION <span class="op">==</span><span class="st"> &quot;ORAL&quot;</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">kable</span>(<span class="kw">head</span>(oral_data))</code></pre></div>
 <table>
 <thead>
@@ -269,8 +276,10 @@ opts_chunk$<span class="kw">set</span>(<span class="dt">cache=</span>T, <span cl
 </tr>
 </tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(oral_data, <span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> COBS, <span class="dt">group =</span> ID, <span class="dt">color =</span> OCC)) +<span class="st"> </span><span class="kw">geom_line</span>() +<span class="st"> </span>
-<span class="st">  </span><span class="kw">facet_wrap</span>(~ID)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(oral_data, 
+       <span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> COBS, <span class="dt">group =</span> ID, <span class="dt">color =</span> OCC)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>ID)</code></pre></div>
 <p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>You will need to help him adjust:</p>
 <ul>
@@ -283,24 +292,24 @@ opts_chunk$<span class="kw">set</span>(<span class="dt">cache=</span>T, <span cl
 <li>adjust the output width so the x-axis numbers don’t overlap</li>
 </ul>
 <div id="to-get-a-final-plot-that-looks-like-this" class="section level3">
-<h3><span class="header-section-number">4.0.1</span> to get a final plot that looks like this:</h3>
+<h3><span class="header-section-number">3.0.1</span> to get a final plot that looks like this:</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(oral_data, <span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> COBS, 
                       <span class="dt">group =</span> <span class="kw">interaction</span>(ID, OCC), 
-                      <span class="dt">color =</span> <span class="kw">factor</span>(OCC))) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="fl">1.05</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">facet_wrap</span>(~ID) +<span class="st"> </span><span class="kw">base_theme</span>() +
-<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Time After Dose, hours&quot;</span>) +
-<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Concentration, ug/mL&quot;</span>) +
-<span class="st">  </span><span class="kw">scale_color_discrete</span>(<span class="dt">name=</span><span class="st">&quot;Occasion&quot;</span>) +<span class="st"> </span><span class="kw">scale_y_log10</span>()
+                      <span class="dt">color =</span> <span class="kw">factor</span>(OCC))) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="fl">1.05</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>ID) <span class="op">+</span><span class="st"> </span><span class="kw">base_theme</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Time After Dose, hours&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Concentration, ug/mL&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_color_discrete</span>(<span class="dt">name=</span><span class="st">&quot;Occasion&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_log10</span>()
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></code></pre></div>
 <p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Jon now wants to get a general feel for the covariate weight, and thus wants to color by weight.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(oral_data, <span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> COBS, 
-                      <span class="dt">group =</span> ID)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="fl">1.05</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">facet_wrap</span>(~OCC) +<span class="st"> </span><span class="kw">base_theme</span>() +
-<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Time After Dose, hours&quot;</span>) +
-<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Concentration, ug/mL&quot;</span>) +
+                      <span class="dt">group =</span> ID)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="fl">1.05</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>OCC) <span class="op">+</span><span class="st"> </span><span class="kw">base_theme</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Time After Dose, hours&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Concentration, ug/mL&quot;</span>) <span class="op">+</span>
 <span class="st"> </span><span class="kw">scale_y_log10</span>()
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></code></pre></div>
 <p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
@@ -312,28 +321,27 @@ opts_chunk$<span class="kw">set</span>(<span class="dt">cache=</span>T, <span cl
 </ul>
 </div>
 <div id="so-it-will-look-like-this" class="section level3">
-<h3><span class="header-section-number">4.0.2</span> so it will look like this:</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">occ_labels &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&#39;1&#39;</span> =<span class="st"> &quot;5 mg IV&quot;</span>, 
-                   <span class="st">&#39;2&#39;</span>=<span class="st"> &quot;5 mg&quot;</span>,
-                   <span class="st">&#39;3&#39;</span> =<span class="st"> &quot;10 mg&quot;</span>,
-                   <span class="st">&#39;4&#39;</span> =<span class="st"> &quot;25 mg&quot;</span>)
-occ_labeller &lt;-<span class="st"> </span>function(variable,value){
-  <span class="kw">return</span>(occ_labels[value])
-}
+<h3><span class="header-section-number">3.0.2</span> so it will look like this:</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">occ_labels &lt;-<span class="st"> </span><span class="kw">c</span>(
+    <span class="st">&#39;1&#39;</span> =<span class="st"> &quot;5 mg IV&quot;</span>, 
+    <span class="st">&#39;2&#39;</span>=<span class="st"> &quot;5 mg&quot;</span>,
+    <span class="st">&#39;3&#39;</span> =<span class="st"> &quot;10 mg&quot;</span>,
+    <span class="st">&#39;4&#39;</span> =<span class="st"> &quot;25 mg&quot;</span>
+)
 
 ct_colWT &lt;-<span class="st"> </span><span class="kw">ggplot</span>(oral_data, <span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> COBS, 
                       <span class="dt">group =</span> <span class="kw">interaction</span>(ID, OCC), 
-                      <span class="dt">color =</span> WEIGHT)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="fl">1.05</span>) +<span class="st"> </span>
-<span class="st"> </span><span class="kw">base_theme</span>() +
-<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Time After Dose, hours&quot;</span>) +
-<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Concentration, ug/mL&quot;</span>) +
-<span class="st"> </span><span class="kw">scale_y_log10</span>() 
-ct_colWT +<span class="st"> </span><span class="kw">facet_grid</span>(OCC~., <span class="dt">labeller=</span>occ_labeller)+<span class="st"> </span><span class="kw">theme</span>(<span class="dt">strip.text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">16</span>, <span class="dt">color=</span><span class="st">&quot;black&quot;</span>))
-<span class="co">#&gt; Warning: The labeller API has been updated. Labellers taking `variable`and</span>
-<span class="co">#&gt; `value` arguments are now deprecated. See labellers documentation.</span>
+                      <span class="dt">color =</span> WEIGHT)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="fl">1.05</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st"> </span><span class="kw">base_theme</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Time After Dose, hours&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Concentration, ug/mL&quot;</span>) <span class="op">+</span>
+<span class="st"> </span><span class="kw">scale_y_log10</span>() </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ct_colWT <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">facet_grid</span>(OCC<span class="op">~</span>., <span class="dt">labeller=</span><span class="kw">labeller</span>(<span class="dt">OCC =</span> occ_labels)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">theme</span>(<span class="dt">strip.text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">16</span>, <span class="dt">color=</span><span class="st">&quot;black&quot;</span>))
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></code></pre></div>
-<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>But just in case also wants to see the old side-by-side view as well.</p>
 <p>He needs your help</p>
 <ul>
@@ -342,33 +350,34 @@ ct_colWT +<span class="st"> </span><span class="kw">facet_grid</span>(OCC~., <sp
 </ul>
 </div>
 <div id="so-it-looks-like-this" class="section level3">
-<h3><span class="header-section-number">4.0.3</span> so it looks like this:</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ct_colWT +<span class="st"> </span><span class="kw">facet_grid</span>(.~OCC, <span class="dt">labeller=</span>occ_labeller)+<span class="st"> </span>
-<span class="st">  </span><span class="kw">theme</span>(<span class="dt">strip.text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">16</span>, <span class="dt">color=</span><span class="st">&quot;black&quot;</span>)) +<span class="st"> </span><span class="kw">theme</span>(<span class="dt">legend.position=</span><span class="st">&quot;bottom&quot;</span>)
-<span class="co">#&gt; Warning: The labeller API has been updated. Labellers taking `variable`and</span>
-<span class="co">#&gt; `value` arguments are now deprecated. See labellers documentation.</span>
+<h3><span class="header-section-number">3.0.3</span> so it looks like this:</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ct_colWT <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">facet_grid</span>(OCC<span class="op">~</span>., <span class="dt">labeller=</span><span class="kw">labeller</span>(<span class="dt">OCC =</span> occ_labels)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">theme</span>(<span class="dt">strip.text =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">16</span>, <span class="dt">color=</span><span class="st">&quot;black&quot;</span>)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">theme</span>(<span class="dt">legend.position=</span><span class="st">&quot;bottom&quot;</span>)
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></code></pre></div>
-<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>Jon decided to look at the 5 mg dose. He needs help figuring out how to add mean lines. He wants to show that the general trend for males and females is similar and so would like to overlay the geometric mean profile for males and females on the concentration-time plot below.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">oral_data_occ2 &lt;-<span class="st"> </span>oral_data %&gt;%<span class="st"> </span><span class="kw">filter</span>(OCC==<span class="dv">2</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">oral_data_occ2 &lt;-<span class="st"> </span>oral_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(OCC<span class="op">==</span><span class="dv">2</span>)
 
 <span class="co"># calculate geometric mean here</span></code></pre></div>
 <p>He did a couple calculations by hand so you can check that the values are the same.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mean_occ2 &lt;-<span class="st"> </span>oral_data %&gt;%<span class="st"> </span><span class="kw">filter</span>(OCC==<span class="dv">2</span>) %&gt;%
-<span class="st">  </span><span class="kw">group_by</span>(GENDER, TAD) %&gt;%<span class="st"> </span><span class="kw">summarize</span>(<span class="dt">meanCONC =</span> <span class="kw">round</span>(<span class="kw">exp</span>(<span class="kw">mean</span>(<span class="kw">log</span>(COBS))),<span class="dv">3</span>))
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mean_occ2 &lt;-<span class="st"> </span>oral_data <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">filter</span>(OCC<span class="op">==</span><span class="dv">2</span>) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">group_by</span>(GENDER, TAD) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">summarize</span>(<span class="dt">meanCONC =</span> <span class="kw">round</span>(<span class="kw">exp</span>(<span class="kw">mean</span>(<span class="kw">log</span>(COBS))),<span class="dv">3</span>))
+
 <span class="kw">head</span>(mean_occ2, <span class="dt">n =</span> <span class="dv">3</span>)
-<span class="co">#&gt; Source: local data frame [3 x 3]</span>
-<span class="co">#&gt; Groups: GENDER [1]</span>
-<span class="co">#&gt; </span>
+<span class="co">#&gt; # A tibble: 3 x 3</span>
+<span class="co">#&gt; # Groups:   GENDER [1]</span>
 <span class="co">#&gt;   GENDER   TAD meanCONC</span>
 <span class="co">#&gt;   &lt;fctr&gt; &lt;dbl&gt;    &lt;dbl&gt;</span>
 <span class="co">#&gt; 1      0  0.00      0.0</span>
 <span class="co">#&gt; 2      0  0.05     11.0</span>
 <span class="co">#&gt; 3      0  0.35     47.6</span>
 <span class="kw">tail</span>(mean_occ2, <span class="dt">n =</span> <span class="dv">3</span>)
-<span class="co">#&gt; Source: local data frame [3 x 3]</span>
-<span class="co">#&gt; Groups: GENDER [1]</span>
-<span class="co">#&gt; </span>
+<span class="co">#&gt; # A tibble: 3 x 3</span>
+<span class="co">#&gt; # Groups:   GENDER [1]</span>
 <span class="co">#&gt;   GENDER   TAD meanCONC</span>
 <span class="co">#&gt;   &lt;fctr&gt; &lt;dbl&gt;    &lt;dbl&gt;</span>
 <span class="co">#&gt; 1      1    16    1.409</span>
@@ -376,12 +385,12 @@ ct_colWT +<span class="st"> </span><span class="kw">facet_grid</span>(OCC~., <sp
 <span class="co">#&gt; 3      1    24    0.833</span></code></pre></div>
 <p>He’s gotten started on the plot but can’t figure out how to overlay the profiles.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(oral_data_occ2, <span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> COBS, 
-                      <span class="dt">group =</span> ID)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="fl">1.05</span>)+<span class="st"> </span><span class="kw">base_theme</span>() +
-<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Time After Dose, hours&quot;</span>) +
-<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Concentration, ug/mL&quot;</span>) +<span class="st"> </span><span class="kw">scale_y_log10</span>()
+                      <span class="dt">group =</span> ID)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="fl">1.05</span>)<span class="op">+</span><span class="st"> </span><span class="kw">base_theme</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Time After Dose, hours&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Concentration, ug/mL&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_log10</span>()
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></code></pre></div>
-<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>To get the final result he asks you to:</p>
 <ul>
 <li>calculate the geometric mean values for males and females</li>
@@ -392,108 +401,108 @@ ct_colWT +<span class="st"> </span><span class="kw">facet_grid</span>(OCC~., <sp
 </ul>
 </div>
 <div id="so-it-looks-like-this-1" class="section level3">
-<h3><span class="header-section-number">4.0.4</span> So it looks like this:</h3>
+<h3><span class="header-section-number">3.0.4</span> So it looks like this:</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(oral_data_occ2, <span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> COBS, 
-                      <span class="dt">group =</span> ID)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="fl">1.05</span>)+<span class="st"> </span><span class="kw">base_theme</span>() +
-<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Time After Dose, hours&quot;</span>) +
-<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Concentration, ug/mL&quot;</span>) +
-<span class="st">  </span><span class="kw">scale_color_discrete</span>(<span class="dt">name=</span><span class="st">&quot;Gender&quot;</span>, <span class="dt">labels=</span> <span class="kw">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>)) +<span class="st"> </span>
-<span class="st">    </span><span class="kw">scale_y_log10</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">10</span> , <span class="dv">50</span>, <span class="dv">100</span>)) +
-<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data =</span> mean_occ2, 
-            <span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> meanCONC, <span class="dt">group =</span> GENDER, <span class="dt">color =</span> GENDER), <span class="dt">size =</span> <span class="fl">1.5</span>)+<span class="st"> </span>
+                      <span class="dt">group =</span> ID)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="fl">1.05</span>)<span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">base_theme</span>() <span class="op">+</span>
+<span class="st">    </span><span class="kw">xlab</span>(<span class="st">&quot;Time After Dose, hours&quot;</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">ylab</span>(<span class="st">&quot;Concentration, ug/mL&quot;</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">scale_color_discrete</span>(<span class="dt">name=</span><span class="st">&quot;Gender&quot;</span>, 
+                       <span class="dt">labels=</span> <span class="kw">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">scale_y_log10</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">10</span> , <span class="dv">50</span>, <span class="dv">100</span>)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_line</span>(<span class="dt">data =</span> mean_occ2, 
+            <span class="kw">aes</span>(<span class="dt">x =</span> TAD, 
+                <span class="dt">y =</span> meanCONC, 
+                <span class="dt">group =</span> GENDER, 
+                <span class="dt">color =</span> GENDER
+                ), <span class="dt">size =</span> <span class="fl">1.5</span>)<span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">theme</span>(<span class="dt">legend.justification=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>), <span class="dt">legend.position=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span>
 
 <span class="co">#&gt; Warning: Transformation introduced infinite values in continuous y-axis</span></code></pre></div>
-<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">session_info</span>()
-<span class="co">#&gt; Session info --------------------------------------------------------------</span>
+<p><img src="ggplot_help_jon_solutions_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">session_info</span>()
+<span class="co">#&gt; Session info -------------------------------------------------------------</span>
 <span class="co">#&gt;  setting  value                       </span>
-<span class="co">#&gt;  version  R version 3.3.2 (2016-10-31)</span>
+<span class="co">#&gt;  version  R version 3.4.0 (2017-04-21)</span>
 <span class="co">#&gt;  system   x86_64, mingw32             </span>
 <span class="co">#&gt;  ui       RTerm                       </span>
 <span class="co">#&gt;  language (EN)                        </span>
 <span class="co">#&gt;  collate  English_United States.1252  </span>
-<span class="co">#&gt;  tz       America/New_York            </span>
-<span class="co">#&gt;  date     2016-11-22</span>
-<span class="co">#&gt; Packages ------------------------------------------------------------------</span>
-<span class="co">#&gt;  package      * version    date      </span>
-<span class="co">#&gt;  assertthat     0.1        2013-12-06</span>
-<span class="co">#&gt;  bookdown       0.2        2016-11-12</span>
-<span class="co">#&gt;  codetools      0.2-15     2016-10-05</span>
-<span class="co">#&gt;  colorspace     1.2-7      2016-10-11</span>
-<span class="co">#&gt;  DBI            0.5-1      2016-09-10</span>
-<span class="co">#&gt;  devtools       1.12.0     2016-06-24</span>
-<span class="co">#&gt;  digest         0.6.10     2016-08-02</span>
-<span class="co">#&gt;  dplyr        * 0.5.0      2016-06-24</span>
-<span class="co">#&gt;  evaluate       0.10       2016-10-11</span>
-<span class="co">#&gt;  ggplot2      * 2.1.0.9001 2016-11-07</span>
-<span class="co">#&gt;  gtable         0.2.0      2016-02-26</span>
-<span class="co">#&gt;  highr          0.6        2016-05-09</span>
-<span class="co">#&gt;  htmltools      0.3.5      2016-03-21</span>
-<span class="co">#&gt;  httpuv         1.3.3      2015-08-04</span>
-<span class="co">#&gt;  knitr        * 1.15       2016-11-09</span>
-<span class="co">#&gt;  labeling       0.3        2014-08-23</span>
-<span class="co">#&gt;  lazyeval       0.2.0      2016-06-12</span>
-<span class="co">#&gt;  magrittr       1.5        2014-11-22</span>
-<span class="co">#&gt;  memoise        1.0.0      2016-01-29</span>
-<span class="co">#&gt;  mime           0.5        2016-07-07</span>
-<span class="co">#&gt;  miniUI         0.1.1      2016-01-15</span>
-<span class="co">#&gt;  munsell        0.4.3      2016-02-13</span>
-<span class="co">#&gt;  PKPDdatasets * 0.1.0      2016-11-02</span>
-<span class="co">#&gt;  PKPDmisc     * 0.4.4.9000 2016-11-02</span>
-<span class="co">#&gt;  plyr           1.8.4      2016-06-08</span>
-<span class="co">#&gt;  R6             2.2.0      2016-10-05</span>
-<span class="co">#&gt;  Rcpp           0.12.7     2016-09-05</span>
-<span class="co">#&gt;  reshape2       1.4.2      2016-10-22</span>
-<span class="co">#&gt;  rmarkdown      1.1        2016-10-16</span>
-<span class="co">#&gt;  scales         0.4.0.9003 2016-11-07</span>
-<span class="co">#&gt;  shiny          0.14.2     2016-11-01</span>
-<span class="co">#&gt;  stringi        1.1.2      2016-10-01</span>
-<span class="co">#&gt;  stringr        1.1.0      2016-08-19</span>
-<span class="co">#&gt;  tibble         1.2        2016-08-26</span>
-<span class="co">#&gt;  withr          1.0.2      2016-06-20</span>
-<span class="co">#&gt;  xtable         1.8-2      2016-02-05</span>
-<span class="co">#&gt;  yaml           2.1.13     2014-06-12</span>
-<span class="co">#&gt;  source                                </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  Github (hadley/ggplot2@70c3d69)       </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  Github (dpastoor/PKPDdatasets@52880fa)</span>
-<span class="co">#&gt;  Github (dpastoor/PKPDmisc@beae2a6)    </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  Github (hadley/scales@d58d83a)        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)                        </span>
-<span class="co">#&gt;  CRAN (R 3.3.2)</span></code></pre></div>
+<span class="co">#&gt;  tz       Europe/Prague               </span>
+<span class="co">#&gt;  date     2017-06-05</span>
+<span class="co">#&gt; Packages -----------------------------------------------------------------</span>
+<span class="co">#&gt;  package      * version  date       source                                </span>
+<span class="co">#&gt;  assertthat     0.2.0    2017-04-11 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  backports      1.1.0    2017-05-22 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  base         * 3.4.0    2017-04-21 local                                 </span>
+<span class="co">#&gt;  bindr          0.1      2016-11-13 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  bindrcpp     * 0.1      2016-12-11 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  bookdown       0.4      2017-05-20 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  broom          0.4.2    2017-02-13 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  cellranger     1.1.0    2016-07-27 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  codetools      0.2-15   2016-10-05 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  colorspace     1.3-2    2016-12-14 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  compiler       3.4.0    2017-04-21 local                                 </span>
+<span class="co">#&gt;  datasets     * 3.4.0    2017-04-21 local                                 </span>
+<span class="co">#&gt;  devtools       1.13.1   2017-05-13 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  digest         0.6.12   2017-01-27 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  dplyr        * 0.6.0    2017-06-02 Github (tidyverse/dplyr@b064c4b)      </span>
+<span class="co">#&gt;  evaluate       0.10     2016-10-11 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  forcats        0.2.0    2017-01-23 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  foreign        0.8-67   2016-09-13 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  ggplot2      * 2.2.1    2016-12-30 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  glue           1.0.0    2017-04-17 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  graphics     * 3.4.0    2017-04-21 local                                 </span>
+<span class="co">#&gt;  grDevices    * 3.4.0    2017-04-21 local                                 </span>
+<span class="co">#&gt;  grid           3.4.0    2017-04-21 local                                 </span>
+<span class="co">#&gt;  gtable         0.2.0    2016-02-26 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  haven          1.0.0    2016-09-23 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  highr          0.6      2016-05-09 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  hms            0.3      2016-11-22 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  htmltools      0.3.6    2017-04-28 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  httr           1.2.1    2016-07-03 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  jsonlite       1.5      2017-06-01 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  knitr        * 1.16     2017-05-18 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  labeling       0.3      2014-08-23 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  lattice        0.20-35  2017-03-25 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  lazyeval       0.2.0    2016-06-12 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  lubridate      1.6.0    2016-09-13 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  magrittr       1.5      2014-11-22 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  memoise        1.1.0    2017-04-21 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  methods        3.4.0    2017-04-21 local                                 </span>
+<span class="co">#&gt;  mnormt         1.5-5    2016-10-15 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  modelr         0.1.0    2016-08-31 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  munsell        0.4.3    2016-02-13 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  nlme           3.1-131  2017-02-06 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  parallel       3.4.0    2017-04-21 local                                 </span>
+<span class="co">#&gt;  PKPDdatasets * 0.1.0    2017-06-02 Github (dpastoor/PKPDdatasets@9eaa831)</span>
+<span class="co">#&gt;  PKPDmisc     * 1.0.0    2017-06-02 Github (dpastoor/PKPDmisc@23e1f49)    </span>
+<span class="co">#&gt;  plyr           1.8.4    2016-06-08 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  psych          1.7.5    2017-05-03 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  purrr        * 0.2.2.2  2017-05-11 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  R6             2.2.1    2017-05-10 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  Rcpp           0.12.11  2017-05-22 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  readr        * 1.1.1    2017-05-16 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  readxl         1.0.0    2017-04-18 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  reshape2       1.4.2    2016-10-22 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  rlang          0.1.1    2017-05-18 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  rmarkdown      1.5.9000 2017-06-03 Github (rstudio/rmarkdown@ea515ef)    </span>
+<span class="co">#&gt;  rprojroot      1.2      2017-01-16 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  rvest          0.3.2    2016-06-17 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  scales         0.4.1    2016-11-09 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  stats        * 3.4.0    2017-04-21 local                                 </span>
+<span class="co">#&gt;  stringi        1.1.5    2017-04-07 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  stringr        1.2.0    2017-02-18 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  tibble       * 1.3.3    2017-05-28 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  tidyr        * 0.6.3    2017-05-15 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  tidyverse    * 1.1.1    2017-01-27 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  tools          3.4.0    2017-04-21 local                                 </span>
+<span class="co">#&gt;  utils        * 3.4.0    2017-04-21 local                                 </span>
+<span class="co">#&gt;  withr          1.0.2    2016-06-20 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  xml2           1.1.1    2017-01-24 CRAN (R 3.4.0)                        </span>
+<span class="co">#&gt;  yaml           2.1.14   2016-11-12 CRAN (R 3.4.0)</span></code></pre></div>
 
 </div>
 </div>
@@ -502,9 +511,10 @@ ct_colWT +<span class="st"> </span><span class="kw">facet_grid</span>(OCC~., <sp
           </div>
         </div>
       </div>
-<a href="diagnostic-plots.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tidyr.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="data-manipulation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tidying-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>

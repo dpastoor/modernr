@@ -1,5 +1,5 @@
 
-# Tidyr 
+## Tidyr legacy
 
 
 
@@ -8,7 +8,9 @@ library(PKPDmisc)
 library(knitr)
 library(lazyeval)
 library(tidyverse)
+#> Loading tidyverse: ggplot2
 #> Loading tidyverse: tibble
+#> Loading tidyverse: tidyr
 #> Loading tidyverse: readr
 #> Loading tidyverse: purrr
 #> Loading tidyverse: dplyr
@@ -20,7 +22,7 @@ library(tidyverse)
 
 
 ```r
-eta_cov <- read.csv("../data/ebe_cov.csv")
+eta_cov <- read.csv("../data/ebe_cov_full.csv")
 ```
 
 
@@ -121,7 +123,7 @@ lapply(paste0("ETA", 1:4), function(eta, g_eta_cov) {
 
 <img src="tidyr_gathering_files/figure-html/unnamed-chunk-9-4.png" width="672" />
 
-## Double stack
+### Double stack
 
 We can actually gather again
 

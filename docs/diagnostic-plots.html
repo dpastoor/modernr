@@ -6,9 +6,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Modern R Solutions</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="solutions to the modern R exercises">
-  <meta name="generator" content="bookdown 0.2 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
 
   <meta property="og:title" content="Modern R Solutions" />
   <meta property="og:type" content="book" />
@@ -32,9 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="introduction-to-ggplot2.html">
-<link rel="next" href="advanced-ggplot-customizations.html">
-
+<link rel="prev" href="tidying-data.html">
+<link rel="next" href="legacy.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -94,6 +92,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 
 
+
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
@@ -103,35 +102,44 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><strong><a href="./"> Modern R Solutions </a></strong></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
-<li class="chapter" data-level="1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html"><i class="fa fa-check"></i><b>1</b> dplyr data manipulation</a><ul>
-<li class="chapter" data-level="1.0.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#task-i"><i class="fa fa-check"></i><b>1.0.1</b> Task-I</a></li>
-<li class="chapter" data-level="1.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#data-manipulation"><i class="fa fa-check"></i><b>1.1</b> DATA MANIPULATION</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#task-ii"><i class="fa fa-check"></i><b>1.1.1</b> Task-II</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Current</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html"><i class="fa fa-check"></i><b>1</b> Introduction to ggplot2</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#xy-plots"><i class="fa fa-check"></i><b>1.1</b> XY Plots</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#boxplots-and-histograms"><i class="fa fa-check"></i><b>1.2</b> Boxplots and Histograms</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#descriptive-statistics"><i class="fa fa-check"></i><b>1.2</b> Descriptive Statistics</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="dplyr-data-manipulation.html"><a href="dplyr-data-manipulation.html#task-iii"><i class="fa fa-check"></i><b>1.2.1</b> Task III</a></li>
+<li class="chapter" data-level="2" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>2</b> Data manipulation</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-manipulation.html"><a href="data-manipulation.html#data-import"><i class="fa fa-check"></i><b>2.1</b> DATA IMPORT</a></li>
+<li class="chapter" data-level="2.2" data-path="data-manipulation.html"><a href="data-manipulation.html#data-manipulation-1"><i class="fa fa-check"></i><b>2.2</b> DATA MANIPULATION</a></li>
+<li class="chapter" data-level="2.3" data-path="data-manipulation.html"><a href="data-manipulation.html#descriptive-statistics"><i class="fa fa-check"></i><b>2.3</b> Descriptive Statistics</a></li>
+<li class="chapter" data-level="2.4" data-path="data-manipulation.html"><a href="data-manipulation.html#average_obs"><i class="fa fa-check"></i><b>2.4</b> average_obs</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html"><i class="fa fa-check"></i><b>3</b> advanced ggplot customizations</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#to-get-a-final-plot-that-looks-like-this"><i class="fa fa-check"></i><b>3.0.1</b> to get a final plot that looks like this:</a></li>
+<li class="chapter" data-level="3.0.2" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-will-look-like-this"><i class="fa fa-check"></i><b>3.0.2</b> so it will look like this:</a></li>
+<li class="chapter" data-level="3.0.3" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this"><i class="fa fa-check"></i><b>3.0.3</b> so it looks like this:</a></li>
+<li class="chapter" data-level="3.0.4" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this-1"><i class="fa fa-check"></i><b>3.0.4</b> So it looks like this:</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html"><i class="fa fa-check"></i><b>2</b> Introduction to ggplot2</a><ul>
-<li class="chapter" data-level="2.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#xy-plots"><i class="fa fa-check"></i><b>2.1</b> XY Plots</a></li>
-<li class="chapter" data-level="2.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#boxplots-and-histograms"><i class="fa fa-check"></i><b>2.2</b> Boxplots and Histograms</a></li>
+<li class="chapter" data-level="4" data-path="tidying-data.html"><a href="tidying-data.html"><i class="fa fa-check"></i><b>4</b> Tidying Data</a><ul>
+<li class="chapter" data-level="4.1" data-path="tidying-data.html"><a href="tidying-data.html#data-checkout-for-all-covariates"><i class="fa fa-check"></i><b>4.1</b> data checkout for all covariates</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="diagnostic-plots.html"><a href="diagnostic-plots.html"><i class="fa fa-check"></i><b>3</b> Diagnostic Plots</a></li>
-<li class="chapter" data-level="4" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html"><i class="fa fa-check"></i><b>4</b> advanced ggplot customizations</a><ul>
-<li class="chapter" data-level="4.0.1" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#to-get-a-final-plot-that-looks-like-this"><i class="fa fa-check"></i><b>4.0.1</b> to get a final plot that looks like this:</a></li>
-<li class="chapter" data-level="4.0.2" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-will-look-like-this"><i class="fa fa-check"></i><b>4.0.2</b> so it will look like this:</a></li>
-<li class="chapter" data-level="4.0.3" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this"><i class="fa fa-check"></i><b>4.0.3</b> so it looks like this:</a></li>
-<li class="chapter" data-level="4.0.4" data-path="advanced-ggplot-customizations.html"><a href="advanced-ggplot-customizations.html#so-it-looks-like-this-1"><i class="fa fa-check"></i><b>4.0.4</b> So it looks like this:</a></li>
+<li class="chapter" data-level="5" data-path="diagnostic-plots.html"><a href="diagnostic-plots.html"><i class="fa fa-check"></i><b>5</b> Diagnostic Plots</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="diagnostic-plots.html"><a href="diagnostic-plots.html#cwres-vs-time-after-dose-tad"><i class="fa fa-check"></i><b>5.0.1</b> CWRES vs time after dose (TAD)</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="tidyr.html"><a href="tidyr.html"><i class="fa fa-check"></i><b>5</b> Tidyr</a><ul>
-<li class="chapter" data-level="5.0.1" data-path="tidyr.html"><a href="tidyr.html#single-plot-example"><i class="fa fa-check"></i><b>5.0.1</b> Single plot example</a></li>
-<li class="chapter" data-level="5.0.2" data-path="tidyr.html"><a href="tidyr.html#iterate-through-multiple-eta-values"><i class="fa fa-check"></i><b>5.0.2</b> Iterate through multiple ETA values</a></li>
-<li class="chapter" data-level="5.1" data-path="tidyr.html"><a href="tidyr.html#double-stack"><i class="fa fa-check"></i><b>5.1</b> Double stack</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="tidyr.html"><a href="tidyr.html#plot-all-releationships"><i class="fa fa-check"></i><b>5.1.1</b> plot all releationships</a></li>
+<li class="chapter" data-level="6" data-path="legacy.html"><a href="legacy.html"><i class="fa fa-check"></i><b>6</b> Legacy</a><ul>
+<li class="chapter" data-level="6.1" data-path="legacy.html"><a href="legacy.html#tidyr-legacy"><i class="fa fa-check"></i><b>6.1</b> Tidyr legacy</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="legacy.html"><a href="legacy.html#single-plot-example"><i class="fa fa-check"></i><b>6.1.1</b> Single plot example</a></li>
+<li class="chapter" data-level="6.1.2" data-path="legacy.html"><a href="legacy.html#iterate-through-multiple-eta-values"><i class="fa fa-check"></i><b>6.1.2</b> Iterate through multiple ETA values</a></li>
+<li class="chapter" data-level="6.1.3" data-path="legacy.html"><a href="legacy.html#double-stack"><i class="fa fa-check"></i><b>6.1.3</b> Double stack</a></li>
+<li class="chapter" data-level="6.1.4" data-path="legacy.html"><a href="legacy.html#plot-all-releationships"><i class="fa fa-check"></i><b>6.1.4</b> plot all releationships</a></li>
 </ul></li>
+<li class="chapter" data-level="6.2" data-path="legacy.html"><a href="legacy.html#dplyr-data-manipulation"><i class="fa fa-check"></i><b>6.2</b> dplyr data manipulation</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="legacy.html"><a href="legacy.html#task-i"><i class="fa fa-check"></i><b>6.2.1</b> Task-I</a></li>
+<li class="chapter" data-level="6.2.2" data-path="legacy.html"><a href="legacy.html#task-ii"><i class="fa fa-check"></i><b>6.2.2</b> Task-II</a></li>
+<li class="chapter" data-level="6.2.3" data-path="legacy.html"><a href="legacy.html#summary-statistics"><i class="fa fa-check"></i><b>6.2.3</b> Summary Statistics</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="nonstandard-evaluation.html"><a href="nonstandard-evaluation.html"><i class="fa fa-check"></i><b>6</b> Nonstandard evaluation</a></li>
+<li class="chapter" data-level="6.3" data-path="legacy.html"><a href="legacy.html#nonstandard-evaluation"><i class="fa fa-check"></i><b>6.3</b> Nonstandard evaluation</a></li>
+<li class="chapter" data-level="6.4" data-path="legacy.html"><a href="legacy.html#diagnostic-plots-1"><i class="fa fa-check"></i><b>6.4</b> Diagnostic Plots</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -150,14 +158,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="diagnostic-plots" class="section level1">
-<h1><span class="header-section-number">3</span> Diagnostic Plots</h1>
+<h1><span class="header-section-number">5</span> Diagnostic Plots</h1>
 <ol style="list-style-type: decimal">
 <li>read in the csv datasets:</li>
 </ol>
 <ul>
-<li>EtaCov_gathered</li>
 <li>Residuals</li>
-<li>Theta</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(PKPDmisc)
 <span class="kw">library</span>(knitr)
@@ -171,300 +177,188 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co">#&gt; Conflicts with tidy packages ----------------------------------------------</span>
 <span class="co">#&gt; filter(): dplyr, stats</span>
 <span class="co">#&gt; lag():    dplyr, stats</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">resid &lt;-<span class="st"> </span><span class="kw">read_phx</span>(<span class="st">&quot;../data/Residuals.csv&quot;</span>)
-theta &lt;-<span class="st"> </span><span class="kw">read_phx</span>(<span class="st">&quot;../data/Theta.csv&quot;</span>)
-etacov_gathered &lt;-<span class="st"> </span><span class="kw">read_phx</span>(<span class="st">&quot;../data/EtaCov_gathered.csv&quot;</span>)</code></pre></div>
-<ol start="2" style="list-style-type: decimal">
-<li>From the Theta table, create a reasonable quality output table of the results. Hint, use knitr::kable, in combination with results=‘asis’ in the chunk settings</li>
-</ol>
-<p>requires names:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">theta %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">select</span>(-<span class="kw">one_of</span>(<span class="kw">c</span>(<span class="st">&quot;Scenario&quot;</span>, <span class="st">&quot;Var. Inf. factor&quot;</span>))) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Parameter</th>
-<th align="right">Estimate</th>
-<th align="left">Units</th>
-<th align="right">Stderr</th>
-<th align="right">CV%</th>
-<th align="right">2.5% CI</th>
-<th align="right">97.5% CI</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">tvKa</td>
-<td align="right">0.39</td>
-<td align="left">1/hr</td>
-<td align="right">0.02</td>
-<td align="right">4.05</td>
-<td align="right">0.36</td>
-<td align="right">0.42</td>
-</tr>
-<tr class="even">
-<td align="left">tvV</td>
-<td align="right">2.94</td>
-<td align="left"></td>
-<td align="right">0.05</td>
-<td align="right">1.83</td>
-<td align="right">2.83</td>
-<td align="right">3.04</td>
-</tr>
-<tr class="odd">
-<td align="left">tvCl</td>
-<td align="right">0.08</td>
-<td align="left"></td>
-<td align="right">0.00</td>
-<td align="right">1.80</td>
-<td align="right">0.08</td>
-<td align="right">0.08</td>
-</tr>
-<tr class="even">
-<td align="left">dVdWT</td>
-<td align="right">1.00</td>
-<td align="left"></td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
-<td align="right">1.00</td>
-<td align="right">1.00</td>
-</tr>
-<tr class="odd">
-<td align="left">dCldAGE</td>
-<td align="right">-0.87</td>
-<td align="left"></td>
-<td align="right">0.11</td>
-<td align="right">-12.26</td>
-<td align="right">-1.09</td>
-<td align="right">-0.66</td>
-</tr>
-<tr class="even">
-<td align="left">stdev0</td>
-<td align="right">0.10</td>
-<td align="left"></td>
-<td align="right">0.00</td>
-<td align="right">2.80</td>
-<td align="right">0.09</td>
-<td align="right">0.10</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">resid &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;../data/Residuals.csv&quot;</span>)
+<span class="co">#&gt; Parsed with column specification:</span>
+<span class="co">#&gt; cols(</span>
+<span class="co">#&gt;   Scenario = col_character(),</span>
+<span class="co">#&gt;   ID = col_integer(),</span>
+<span class="co">#&gt;   IVAR = col_double(),</span>
+<span class="co">#&gt;   TAD = col_double(),</span>
+<span class="co">#&gt;   PRED = col_double(),</span>
+<span class="co">#&gt;   IPRED = col_double(),</span>
+<span class="co">#&gt;   DV = col_double(),</span>
+<span class="co">#&gt;   IRES = col_double(),</span>
+<span class="co">#&gt;   Weight = col_double(),</span>
+<span class="co">#&gt;   IWRES = col_double(),</span>
+<span class="co">#&gt;   WRES = col_double(),</span>
+<span class="co">#&gt;   CWRES = col_double(),</span>
+<span class="co">#&gt;   CdfDV = col_integer(),</span>
+<span class="co">#&gt;   TADSeq = col_integer(),</span>
+<span class="co">#&gt;   ObsName = col_character(),</span>
+<span class="co">#&gt;   ResetSeq = col_integer()</span>
+<span class="co">#&gt; )</span></code></pre></div>
 <ul>
-<li>clean up columns</li>
-<li>clean up column names</li>
-<li>units</li>
+<li>Create a Res vs Time function with loess fits for the central tendency and the spread (hint abs() is your friend for the spread).
+<ul>
+<li>Conditionally allow the loess curve of central tendency to appear, with a default of TRUE.</li>
+<li>Users should be able to specify the residual column name.</li>
+</ul></li>
 </ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Create a CWRES vs Time plot with loess fits for the central tendency and the spread (hint abs() is your friend for the spread)</li>
-</ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">gg_cwres_tad &lt;-<span class="st"> </span>function(df) {
-df %&gt;%
-<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> CWRES)) +<span class="st"> </span><span class="kw">geom_point</span>() +
-<span class="st">  </span><span class="kw">stat_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">se=</span>F, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>) +
-<span class="st">  </span><span class="kw">stat_smooth</span>(<span class="dt">data =</span> df %&gt;%
-<span class="st">                </span><span class="kw">mutate</span>(<span class="dt">CWRES =</span> <span class="kw">abs</span>(CWRES)), 
-              <span class="dt">se =</span> F, <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>) +
-<span class="st">  </span><span class="kw">stat_smooth</span>(<span class="dt">data =</span> df %&gt;%
-<span class="st">                </span><span class="kw">mutate</span>(<span class="dt">CWRES =</span> -<span class="kw">abs</span>(CWRES)), 
-              <span class="dt">se =</span> F, <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>) +
-<span class="st">    </span><span class="kw">theme_bw</span>() +
-<span class="st">    </span><span class="kw">base_theme</span>()
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">gg_res_tad &lt;-<span class="st"> </span><span class="cf">function</span>(df, .tad, .res, <span class="dt">.show_loess =</span> <span class="ot">TRUE</span>) {
+    .tad &lt;-<span class="st"> </span>rlang<span class="op">::</span><span class="kw">enexpr</span>(.tad)
+    .res &lt;-<span class="st"> </span>rlang<span class="op">::</span><span class="kw">enexpr</span>(.res)
+    ple &lt;-<span class="st"> </span>rlang<span class="op">::</span><span class="kw">quo</span>(
+        df <span class="op">%&gt;%</span>
+<span class="st">          </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> <span class="op">!!</span>.tad, <span class="dt">y =</span> <span class="op">!!</span>.res)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">          </span><span class="kw">stat_smooth</span>(<span class="dt">data =</span> df <span class="op">%&gt;%</span>
+<span class="st">                        </span><span class="kw">mutate</span>(<span class="op">!!</span>.res <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">abs</span>(<span class="op">!!</span>.res)), 
+                      <span class="dt">se =</span> F, <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span>
+<span class="st">          </span><span class="kw">stat_smooth</span>(<span class="dt">data =</span> df <span class="op">%&gt;%</span>
+<span class="st">                        </span><span class="kw">mutate</span>(<span class="op">!!</span>.res <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="op">-</span><span class="kw">abs</span>(<span class="op">!!</span>.res)), 
+                      <span class="dt">se =</span> F, <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span>
+<span class="st">            </span><span class="kw">theme_bw</span>()
+    )
+    output &lt;-<span class="st"> </span>rlang<span class="op">::</span><span class="kw">eval_tidy</span>(ple) 
+    <span class="cf">if</span> (.show_loess) {
+       <span class="kw">return</span>(
+           output <span class="op">+</span><span class="st"> </span>
+<span class="st">            </span><span class="kw">stat_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">se=</span>F, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>)
+       ) 
+    }
+    <span class="kw">return</span>(output)
 }</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">gg_cwres_tad</span>(resid)
+<div id="cwres-vs-time-after-dose-tad" class="section level3">
+<h3><span class="header-section-number">5.0.1</span> CWRES vs time after dose (TAD)</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">gg_res_tad</span>(resid, TAD, CWRES)
 <span class="co">#&gt; `geom_smooth()` using method = &#39;loess&#39;</span>
 <span class="co">#&gt; `geom_smooth()` using method = &#39;loess&#39;</span></code></pre></div>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<ol start="4" style="list-style-type: decimal">
-<li>update the CWRES vs Time plot to flag anything with CWRES &gt; 2.5 as a red value</li>
-</ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-resid %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">HIGHCWRES =</span> <span class="kw">ifelse</span>(<span class="kw">abs</span>(CWRES) &gt;<span class="st"> </span><span class="fl">2.5</span>, <span class="dv">1</span>, <span class="dv">0</span>)) %&gt;%
-<span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> CWRES)) +
-<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> <span class="kw">factor</span>(HIGHCWRES))) +
-<span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="dt">name =</span> <span class="st">&quot;Outlier&quot;</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;not outlier&quot;</span>, <span class="st">&quot;outlier&quot;</span>)) +
-<span class="st">  </span><span class="kw">stat_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>) +
-<span class="st">  </span><span class="kw">stat_smooth</span>(<span class="dt">data =</span> resid %&gt;%
-<span class="st">                </span><span class="kw">mutate</span>(<span class="dt">CWRES =</span> <span class="kw">abs</span>(CWRES)), 
-              <span class="dt">method=</span><span class="st">&quot;loess&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">se =</span> F) +
-<span class="st">  </span><span class="kw">stat_smooth</span>(<span class="dt">data =</span> resid %&gt;%
-<span class="st">                </span><span class="kw">mutate</span>(<span class="dt">CWRES =</span> -<span class="kw">abs</span>(CWRES)), 
-              <span class="dt">method=</span><span class="st">&quot;loess&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">se =</span> F) </code></pre></div>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<ol start="5" style="list-style-type: decimal">
-<li>print a table of key information for all points with CWRES &gt; 2.5</li>
-</ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">resid %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">HIGHCWRES =</span> <span class="kw">ifelse</span>(<span class="kw">abs</span>(CWRES) &gt;<span class="st"> </span><span class="fl">2.5</span>, <span class="dv">1</span>, <span class="dv">0</span>)) %&gt;%
-<span class="st">  </span><span class="kw">filter</span>(HIGHCWRES ==<span class="dv">1</span>) %&gt;%<span class="st"> </span><span class="kw">select</span>(ID, IVAR, TAD, IPRED, DV) %&gt;%<span class="st"> </span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th align="right">ID</th>
-<th align="right">IVAR</th>
-<th align="right">TAD</th>
-<th align="right">IPRED</th>
-<th align="right">DV</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">4</td>
-<td align="right">364</td>
-<td align="right">28</td>
-<td align="right">28.93</td>
-<td align="right">18.62</td>
-</tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="right">400</td>
-<td align="right">64</td>
-<td align="right">11.92</td>
-<td align="right">13.73</td>
-</tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="right">48</td>
-<td align="right">0</td>
-<td align="right">7.26</td>
-<td align="right">8.12</td>
-</tr>
-<tr class="even">
-<td align="right">9</td>
-<td align="right">352</td>
-<td align="right">16</td>
-<td align="right">39.54</td>
-<td align="right">27.48</td>
-</tr>
-<tr class="odd">
-<td align="right">36</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">23.60</td>
-<td align="right">17.10</td>
-</tr>
-<tr class="even">
-<td align="right">36</td>
-<td align="right">364</td>
-<td align="right">28</td>
-<td align="right">18.01</td>
-<td align="right">22.57</td>
-</tr>
-</tbody>
-</table>
-<ol start="6" style="list-style-type: decimal">
-<li>Plot individual IPRED and DV vs time</li>
-</ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">split_resid &lt;-<span class="st"> </span>resid %&gt;%<span class="st"> </span><span class="kw">filter</span>(TADSeq ==<span class="dv">1</span>) %&gt;%<span class="st"> </span><span class="kw">mutate</span>(<span class="dt">IDBINS =</span> <span class="kw">ids_per_plot</span>(ID, <span class="dv">9</span>)) %&gt;%<span class="st"> </span><span class="kw">split</span>(.[[<span class="st">&quot;IDBINS&quot;</span>]])
+<p><img src="diagnostic-plots_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<ul>
+<li>update your function to flag any point over some threshold as red, with a default of absolute difference of &gt; 2.5</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">gg_res_tad &lt;-<span class="st"> </span><span class="cf">function</span>(df, .tad, .res, <span class="dt">.threshold =</span> <span class="fl">2.5</span>, <span class="dt">.show_loess =</span> <span class="ot">TRUE</span>) {
+    .tad &lt;-<span class="st"> </span>rlang<span class="op">::</span><span class="kw">enexpr</span>(.tad)
+    .res &lt;-<span class="st"> </span>rlang<span class="op">::</span><span class="kw">enexpr</span>(.res)
+    ple &lt;-<span class="st"> </span>rlang<span class="op">::</span><span class="kw">quo</span>(
+     df <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">mutate</span>(<span class="dt">HIGHRES__ =</span> <span class="kw">ifelse</span>(<span class="kw">abs</span>(<span class="op">!!</span>.res) <span class="op">&gt;</span><span class="st"> </span>.threshold, <span class="dv">1</span>, <span class="dv">0</span>)) <span class="op">%&gt;%</span>
+<span class="st">          </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> <span class="op">!!</span>.tad, <span class="dt">y =</span> <span class="op">!!</span>.res)) <span class="op">+</span>
+<span class="st">          </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> <span class="kw">factor</span>(HIGHRES__))) <span class="op">+</span>
+<span class="st">          </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>), 
+                             <span class="dt">name =</span> <span class="st">&quot;Outlier&quot;</span>, 
+                             <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;not outlier&quot;</span>, <span class="st">&quot;outlier&quot;</span>)) <span class="op">+</span>
+<span class="st">          </span><span class="kw">stat_smooth</span>(<span class="dt">data =</span> df <span class="op">%&gt;%</span>
+<span class="st">                        </span><span class="kw">mutate</span>(<span class="op">!!</span>.res <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="kw">abs</span>(<span class="op">!!</span>.res)), 
+                      <span class="dt">se =</span> F, <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span>
+<span class="st">          </span><span class="kw">stat_smooth</span>(<span class="dt">data =</span> df <span class="op">%&gt;%</span>
+<span class="st">                        </span><span class="kw">mutate</span>(<span class="op">!!</span>.res <span class="op">:</span><span class="er">=</span><span class="st"> </span><span class="op">-</span><span class="kw">abs</span>(<span class="op">!!</span>.res)), 
+                      <span class="dt">se =</span> F, <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="op">+</span>
+<span class="st">            </span><span class="kw">theme_bw</span>()
+    )
+    output &lt;-<span class="st"> </span>rlang<span class="op">::</span><span class="kw">eval_tidy</span>(ple) 
+    <span class="cf">if</span> (.show_loess) {
+       <span class="kw">return</span>(
+           output <span class="op">+</span><span class="st"> </span>
+<span class="st">            </span><span class="kw">stat_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">se=</span>F, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>)
+       ) 
+    }
+    <span class="kw">return</span>(output)
+}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">gg_res_tad</span>(resid, TAD, CWRES)
+<span class="co">#&gt; `geom_smooth()` using method = &#39;loess&#39;</span>
+<span class="co">#&gt; `geom_smooth()` using method = &#39;loess&#39;</span></code></pre></div>
+<p><img src="diagnostic-plots_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">session_info</span>()
+<span class="co">#&gt; Session info -------------------------------------------------------------</span>
+<span class="co">#&gt;  setting  value                       </span>
+<span class="co">#&gt;  version  R version 3.4.0 (2017-04-21)</span>
+<span class="co">#&gt;  system   x86_64, mingw32             </span>
+<span class="co">#&gt;  ui       RTerm                       </span>
+<span class="co">#&gt;  language (EN)                        </span>
+<span class="co">#&gt;  collate  English_United States.1252  </span>
+<span class="co">#&gt;  tz       Europe/Prague               </span>
+<span class="co">#&gt;  date     2017-06-05</span>
+<span class="co">#&gt; Packages -----------------------------------------------------------------</span>
+<span class="co">#&gt;  package    * version  date       source                            </span>
+<span class="co">#&gt;  assertthat   0.2.0    2017-04-11 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  backports    1.1.0    2017-05-22 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  base       * 3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  bindr        0.1      2016-11-13 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  bindrcpp   * 0.1      2016-12-11 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  bookdown     0.4      2017-05-20 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  broom        0.4.2    2017-02-13 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  cellranger   1.1.0    2016-07-27 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  codetools    0.2-15   2016-10-05 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  colorspace   1.3-2    2016-12-14 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  compiler     3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  datasets   * 3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  devtools     1.13.1   2017-05-13 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  digest       0.6.12   2017-01-27 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  dplyr      * 0.6.0    2017-06-02 Github (tidyverse/dplyr@b064c4b)  </span>
+<span class="co">#&gt;  evaluate     0.10     2016-10-11 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  forcats      0.2.0    2017-01-23 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  foreign      0.8-67   2016-09-13 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  ggplot2    * 2.2.1    2016-12-30 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  glue         1.0.0    2017-04-17 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  graphics   * 3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  grDevices  * 3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  grid         3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  gtable       0.2.0    2016-02-26 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  haven        1.0.0    2016-09-23 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  hms          0.3      2016-11-22 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  htmltools    0.3.6    2017-04-28 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  httr         1.2.1    2016-07-03 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  jsonlite     1.5      2017-06-01 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  knitr      * 1.16     2017-05-18 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  labeling     0.3      2014-08-23 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  lattice      0.20-35  2017-03-25 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  lazyeval     0.2.0    2016-06-12 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  lubridate    1.6.0    2016-09-13 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  magrittr     1.5      2014-11-22 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  memoise      1.1.0    2017-04-21 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  methods      3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  mnormt       1.5-5    2016-10-15 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  modelr       0.1.0    2016-08-31 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  munsell      0.4.3    2016-02-13 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  nlme         3.1-131  2017-02-06 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  parallel     3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  PKPDmisc   * 1.0.0    2017-06-02 Github (dpastoor/PKPDmisc@23e1f49)</span>
+<span class="co">#&gt;  plyr         1.8.4    2016-06-08 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  psych        1.7.5    2017-05-03 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  purrr      * 0.2.2.2  2017-05-11 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  R6           2.2.1    2017-05-10 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  Rcpp         0.12.11  2017-05-22 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  readr      * 1.1.1    2017-05-16 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  readxl       1.0.0    2017-04-18 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  reshape2     1.4.2    2016-10-22 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  rlang        0.1.1    2017-05-18 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  rmarkdown    1.5.9000 2017-06-03 Github (rstudio/rmarkdown@ea515ef)</span>
+<span class="co">#&gt;  rprojroot    1.2      2017-01-16 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  rvest        0.3.2    2016-06-17 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  scales       0.4.1    2016-11-09 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  stats      * 3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  stringi      1.1.5    2017-04-07 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  stringr      1.2.0    2017-02-18 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  tibble     * 1.3.3    2017-05-28 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  tidyr      * 0.6.3    2017-05-15 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  tidyverse  * 1.1.1    2017-01-27 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  tools        3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  utils      * 3.4.0    2017-04-21 local                             </span>
+<span class="co">#&gt;  withr        1.0.2    2016-06-20 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  xml2         1.1.1    2017-01-24 CRAN (R 3.4.0)                    </span>
+<span class="co">#&gt;  yaml         2.1.14   2016-11-12 CRAN (R 3.4.0)</span></code></pre></div>
 
-p &lt;-<span class="st"> </span>function(df) {
-  df %&gt;%
-<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> IPRED, <span class="dt">group=</span> TADSeq)) +
-<span class="st">  </span><span class="kw">geom_line</span>() +<span class="st"> </span><span class="kw">facet_wrap</span>(~ID) +<span class="st"> </span><span class="kw">theme_bw</span>() +
-<span class="st">    </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> DV))+
-<span class="st">    </span><span class="kw">labs</span>(<span class="kw">list</span>(<span class="dt">x =</span> <span class="st">&quot;Time after Dose, hrs&quot;</span>,
-              <span class="dt">y =</span> <span class="st">&quot;Individual Predicted and Observed&quot;</span>)) 
-}
-split_resid %&gt;%<span class="st"> </span><span class="kw">map</span>(p)
-<span class="co">#&gt; $`1`</span></code></pre></div>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<pre><code>#&gt; 
-#&gt; $`2`</code></pre>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
-<pre><code>#&gt; 
-#&gt; $`3`</code></pre>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-9-3.png" width="672" /></p>
-<pre><code>#&gt; 
-#&gt; $`4`</code></pre>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-9-4.png" width="672" /></p>
-<pre><code>#&gt; 
-#&gt; $`5`</code></pre>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-9-5.png" width="672" /></p>
-<pre><code>#&gt; 
-#&gt; $`6`</code></pre>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-9-6.png" width="672" /></p>
-<p>As a reminder, map works like lapply, it applies the same function to each element in the list. In this case, it is taking split_resid (which is the residual dataframe split by 9 ids per group) and then applies the plot function to each set of 9.</p>
-<p>6b) add the population prediction as a dashed blue line</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-p &lt;-<span class="st"> </span>function(df) {
-  df %&gt;%
-<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> IPRED, <span class="dt">group=</span> TADSeq)) +
-<span class="st">  </span><span class="kw">geom_line</span>() +<span class="st"> </span><span class="kw">facet_wrap</span>(~ID) +<span class="st"> </span><span class="kw">theme_bw</span>() +
-<span class="st">    </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> DV))+<span class="kw">labs</span>(<span class="kw">list</span>(<span class="dt">x =</span> <span class="st">&quot;Time after Dose, hrs&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Individual Predicted and Observed&quot;</span>)) +
-<span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> TAD, <span class="dt">y =</span> PRED, <span class="dt">group =</span> TADSeq), <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>)
-}
-
-split_resid %&gt;%<span class="st"> </span><span class="kw">map</span>(p)
-<span class="co">#&gt; $`1`</span></code></pre></div>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
-<pre><code>#&gt; 
-#&gt; $`2`</code></pre>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-10-2.png" width="672" /></p>
-<pre><code>#&gt; 
-#&gt; $`3`</code></pre>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-10-3.png" width="672" /></p>
-<pre><code>#&gt; 
-#&gt; $`4`</code></pre>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-10-4.png" width="672" /></p>
-<pre><code>#&gt; 
-#&gt; $`5`</code></pre>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-10-5.png" width="672" /></p>
-<pre><code>#&gt; 
-#&gt; $`6`</code></pre>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-10-6.png" width="672" /></p>
-<ol start="7" style="list-style-type: decimal">
-<li>With EtaCov_final create histograms of all the eta distributions</li>
-</ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-p_etas&lt;-<span class="st"> </span>etacov_gathered %&gt;%
-<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> VALUE, <span class="dt">group =</span> ETA)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">facet_wrap</span>(~ETA, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>) +<span class="st"> </span><span class="kw">base_theme</span>()
-
-p_etas
-<span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></code></pre></div>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
-<p>add a mean value for each eta overlaid on the above plot</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mean_eta &lt;-<span class="st"> </span>etacov_gathered %&gt;%<span class="st"> </span>
-<span class="st">    </span><span class="kw">group_by</span>(ETA) %&gt;%
-<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">meanEta =</span> <span class="kw">mean</span>(VALUE))
-
-p_etas +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">data =</span> mean_eta, <span class="kw">aes</span>(<span class="dt">xintercept =</span> meanEta), <span class="dt">size =</span> <span class="fl">1.5</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>)
-<span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></code></pre></div>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
-<ol start="8" style="list-style-type: decimal">
-<li>Create Eta vs Covariate plots for each covariate and all etas</li>
-</ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">etacov_gathered %&gt;%
-<span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> WT, <span class="dt">y =</span> VALUE, <span class="dt">group =</span> ETA)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">facet_wrap</span>(~ETA, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">stat_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">se =</span> F, <span class="dt">size =</span> <span class="fl">1.3</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">base_theme</span>()</code></pre></div>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-etacov_gathered %&gt;%
-<span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> AGE, <span class="dt">y =</span> VALUE, <span class="dt">group =</span> ETA)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">facet_wrap</span>(~ETA, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>) +
-<span class="st">  </span><span class="kw">stat_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">se =</span> F, <span class="dt">size =</span> <span class="fl">1.3</span>) +<span class="st"> </span><span class="kw">base_theme</span>()</code></pre></div>
-<p><img src="diagnostic-plots_solutions_files/figure-html/unnamed-chunk-13-2.png" width="672" /></p>
-<p>Note in the plot above, the choice of facet_wrap was arbitrary, and potentially a cleaner looking plot can be created with facet_grid, especially for labels, my suggestion is to try both.</p>
-<p>Hint: since there is so much duplicated, this would be a good opportunity to turn that into a function that you pass in the covariate to plot for <code>x</code>.</p>
-<ol start="9" style="list-style-type: decimal">
-<li>add loess fits to the eta cov plots</li>
-</ol>
-<p>done in above plots</p>
-
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="introduction-to-ggplot2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="advanced-ggplot-customizations.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="tidying-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="legacy.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -482,7 +376,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/dpastoor/modernr/edit/master/diagnostic-plots_solutions.Rmd",
+"link": "https://github.com/dpastoor/modernr/edit/master/diagnostic-plots.Rmd",
 "text": "Edit"
 },
 "download": null,
