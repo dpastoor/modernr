@@ -1,0 +1,19 @@
+# Dataset Creation
+
+```{r}
+library(tidyverse)
+library(PKPDmisc)
+```
+
+Messy data
+
+```{r}
+expand.grid(ID = paste0("ID", pad_left(1:5, 3)), 
+            SITE = c("S001", "S002", "S003")) %>%
+    as_data_frame()
+```
+
+```{r}
+devtools::session_info()
+```
+
